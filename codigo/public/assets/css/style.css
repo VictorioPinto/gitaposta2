@@ -12,7 +12,9 @@ h4 {
 .banner img {
   width: 100%;
 }
-
+body {
+  background-color: rgb(34, 33, 33);
+}
 .barra-info {
   height: 2em;
   background-color: #f0f0f0;
@@ -56,27 +58,69 @@ main {
 }
 #chat-container {
   margin: 10vh 20vw 0px;
+  background-color: rgb(34, 33, 33);
   border: 1px solid black;
   #messages {
     height: 50vh;
-    border: 1px solid blue;
-  }
-  p {
-    width: fit-content;
-    max-width: 30vh;
+
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    overflow-x: hidden; /* Esconde barra horizontal */
+    padding: 10px;
+    box-sizing: border-box;
+    word-break: break-word; /* Quebra palavras longas */
+    max-width: 100%;
   }
   /* Mensagem do próprio usuário à direita */
   .message.self {
-    background-color: #4d9946;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: 0;
-    text-align: right;
+    width: fit-content;
+    padding: 1.5vh;
+    label {
+      color: orange;
+    }
   }
 
   /* Mensagem de outros usuários à esquerda */
   .message {
+    padding: 1.5vh;
+    width: fit-content;
     margin-right: auto;
+    color: white;
     margin-left: 0;
     text-align: left;
+    p {
+      font-size: 1.1em;
+      padding-left: 0.7vw;
+      max-width: 100vh;
+      height: auto;
+    }
+  }
+  #message-input {
+    width: 90%;
+    padding: 0.5em;
+    border-radius: 50px;
+    border: none;
+    margin-left: 1vw;
+    background-color: #383736;
+    color: white;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px black;
+    }
+  }
+  #send-button {
+    margin: 2vh 0;
+    background-color: #383736;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    &:hover {
+      background-color: #383736;
+      color: white;
+      box-shadow: 0 0 5px black;
+    }
   }
 }
