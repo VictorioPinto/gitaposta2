@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário para se tornar Ajudante</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/login.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="barra-info">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="chat.html">Chat</a></li>
+          </ul>
+        </nav>
+        <div class="dados-usuario">
+          <span id="userInfo"></span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h2>Formulário para se tornar Ajudante</h2>
+      <form id="form-ajudante">
+        <label for="experiencia"
+          >Possui experiência ajudando pessoas? Descreva:</label
+        ><br />
+        <textarea
+          id="experiencia"
+          name="experiencia"
+          rows="3"
+          required
+        ></textarea
+        ><br /><br />
+
+        <label for="motivacao">Por que você quer ser ajudante?</label><br />
+        <textarea id="motivacao" name="motivacao" rows="3" required></textarea
+        ><br /><br />
+
+        <label for="disponibilidade">Disponibilidade de horário:</label><br />
+        <input
+          type="text"
+          id="disponibilidade"
+          name="disponibilidade"
+          required
+        /><br /><br />
+
+        <label for="vivencia"
+          >Já teve experiência pessoal ou próxima com vício em apostas?</label
+        ><br />
+        <select id="vivencia" name="vivencia" required>
+          <option value="">Selecione</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+          <option value="prefiro_nao_dizer">Prefiro não dizer</option></select
+        ><br /><br />
+
+        <label for="como_ajudar"
+          >Como pretende ajudar os usuários do site?</label
+        ><br />
+        <textarea
+          id="como_ajudar"
+          name="como_ajudar"
+          rows="3"
+          required
+        ></textarea
+        ><br /><br />
+
+        <input type="checkbox" id="termos" name="termos" required />
+        <label for="termos"
+          >Li e concordo com os termos de responsabilidade.</label
+        ><br /><br />
+
+        <button type="submit">Enviar candidatura</button>
+      </form>
+      <div id="mensagem"></div>
+    </main>
+    <script src="./assets/js/formulario.js"></script>
+  </body>
+</html>

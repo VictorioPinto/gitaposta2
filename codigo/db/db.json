@@ -1,39 +1,13 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
-    },
-    {
-      "id": 2,
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
-    },
-    {
-      "login": "rommel",
-      "senha": "123",
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
-    },
-    {
       "login": "111",
       "senha": "111",
       "nome": "111",
       "email": "111",
-      "id": 4
-    },
-    {
-      "login": "222",
-      "senha": "222",
-      "nome": "222",
-      "email": "222",
-      "id": 5
+      "ajudante": false,
+      "moderador": false,
+      "id": 1
     }
   ],
   "mensagens": [
@@ -76,6 +50,24 @@
       "nome": "222",
       "texto": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "id": 8
+    },
+    {
+      "nome": "111",
+      "texto": "texto",
+      "id": 9
+    }
+  ],
+  "candidatos-ajudante": [
+    {
+      "experiencia": "aaaaaaaaaaaaa",
+      "motivacao": "aaaaaaaaaaaa",
+      "disponibilidade": "aaaaaaaaaaa",
+      "vivencia": "sim",
+      "como_ajudar": "aaaaaaaaaaa",
+      "termos": "on",
+      "nome": "111",
+      "email": "111",
+      "id": 1
     }
   ]
 }
