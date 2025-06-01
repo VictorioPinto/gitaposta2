@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Candidatos a Ajudante</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/login.js"></script>
+</head>
+<body>
+  <header>
+    <div class="barra-info">
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Sobre nós</a></li>
+          <li><a href="chat.html">Chat</a></li>
+          <li><a href="formulario_ajudante.html">Formulario</a></li>
+            <li><a href="lista_ajudantes.html">Lista</a></li>
+        </ul>
+      </nav>
+      <div class="dados-usuario">
+        <span id="userInfo"></span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h2>Candidatos a Ajudante</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Motivação</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-candidatos"></tbody>
+    </table>
+  </main>
+  
+</body>
+<script src="./assets/js/lista_ajudantes.js"></script>
+</html>

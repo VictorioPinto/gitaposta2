@@ -5,9 +5,18 @@
       "senha": "111",
       "nome": "111",
       "email": "111",
-      "ajudante": false,
-      "moderador": false,
+      "ajudante": true,
+      "moderador": true,
       "id": 1
+    },
+    {
+      "login": "333",
+      "senha": "333",
+      "nome": "333333333333",
+      "email": "333333333",
+      "ajudante": true,
+      "moderador": false,
+      "id": 2
     }
   ],
   "mensagens": [
@@ -59,15 +68,15 @@
   ],
   "candidatos-ajudante": [
     {
-      "experiencia": "aaaaaaaaaaaaa",
-      "motivacao": "aaaaaaaaaaaa",
-      "disponibilidade": "aaaaaaaaaaa",
+      "experiencia": "aaaaaaaa",
+      "motivacao": "aaaaaaaaaaaaaaaaa",
+      "disponibilidade": "aaaaaaaaaaaa",
       "vivencia": "sim",
-      "como_ajudar": "aaaaaaaaaaa",
+      "como_ajudar": "aaaaaaaaaaaaaaaaaa",
       "termos": "on",
       "nome": "111",
       "email": "111",
-      "id": 1
+      "id": 2
     }
   ]
 }
