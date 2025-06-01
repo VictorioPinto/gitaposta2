@@ -1,11 +1,11 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Vida Sem Apostas
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Neto 
+    given-names: Victório 
+  - family-names: Avelar
+    given-names: Lucas
   - family-names: 
     given-names: 
   - family-names: 
@@ -14,7 +14,7 @@ authors:
     given-names: 
   - family-names: 
     given-names:
-  - name-suffix: Professor
+  - name-suffix: Rommel Vieira Carneiro
     affiliation: PUC Minas
     family-names: 
     given-names: 
@@ -23,9 +23,11 @@ authors:
     family-names: 
     given-names: 
 keywords:
-  - 
-  - 
-repository-code: 
+  - Apostas
+  - auto-ajuda
+  - vício
+  - dependência
+repository-code: https://github.com/orgs/ICEI-PUC-Minas-PMGCC-TI/teams/grupo-2-vicio-em-apostas
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
