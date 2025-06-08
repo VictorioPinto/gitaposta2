@@ -26,6 +26,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 50vw;
 }
 
 .menu li {
@@ -123,4 +124,313 @@ main {
       box-shadow: 0 0 5px black;
     }
   }
+}
+.config-button {
+  text-align: center;
+  
+  svg {
+    
+    width: 1em;
+    height: 1em;
+    margin: 0.5em;
+    fill: white;
+  }
+  
+}
+.config-button:hover {
+  svg {
+    transition: 1s;
+    fill: #ff7645;
+  }
+  cursor: pointer;
+}
+.config-button {
+  text-align: center;
+  position: relative; /* Adicionado para ser referência do absolute */
+  display: inline-block;
+}
+
+.options {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%); ;
+  background: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0008;
+  z-index: 10;
+  min-width: 100px;
+  padding: 0.5em 0.5em;
+}
+
+.options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.options ul li button {
+  background: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1em;
+  padding: 0.3em 0.5em;
+  width: 100%;
+  text-align: left;
+}
+
+.options ul li button svg {
+  width: 1.2em;
+  height: 1.2em;
+  
+}
+
+/* Estilo para o formulário de ajudante */
+#form-ajudante {
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0005;
+  max-width: 500px;
+  margin: 40px auto 0 auto;
+  padding: 32px 28px 24px 28px;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+#form-ajudante label {
+  color: #ff7645;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+#form-ajudante textarea,
+#form-ajudante input[type="text"],
+#form-ajudante select {
+  width: 100%;
+  padding: 0.7em 1em;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #383736;
+  color: #fff;
+  font-size: 1em;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+#form-ajudante textarea:focus,
+#form-ajudante input[type="text"]:focus,
+#form-ajudante select:focus {
+  border: 1.5px solid #ff7645;
+  outline: none;
+}
+
+#form-ajudante input[type="checkbox"] {
+  accent-color: #ff7645;
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+#form-ajudante button[type="submit"] {
+  background: linear-gradient(90deg, #ff7645 60%, #ffb88c 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0003;
+}
+
+#form-ajudante button[type="submit"]:hover {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff7645 100%);
+  box-shadow: 0 4px 16px #0005;
+}
+
+#mensagem {
+  margin-top: 18px;
+  font-size: 1.1em;
+  color: #ff7645;
+  text-align: center;
+}
+/* Estilo para a tabela de candidatos */
+.table {
+  background: #232323;
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px #0005;
+  margin-top: 30px;
+}
+
+.table th, .table td {
+  vertical-align: middle !important;
+  text-align: left;
+}
+
+.table th {
+  background: #181818;
+  color: #ff7645;
+  font-weight: bold;
+  border-bottom: 2px solid #ff7645;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #292929;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #232323;
+}
+
+.table td button {
+  background: linear-gradient(90deg, #ff7645 60%, #ffb88c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4em 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.table td button:hover {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff7645 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px #0005;
+}
+/* Detalhes do candidato */
+#detalhes {
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0005;
+  max-width: 500px;
+  margin: 30px auto 0 auto;
+  padding: 32px 28px 24px 28px;
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+#detalhes strong {
+  color: #ff7645;
+}
+
+#botoes-acoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+#botoes-acoes button {
+  min-width: 120px;
+  font-size: 1em;
+  padding: 0.6em 1.5em;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0003;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+#btn-aceitar {
+  background: linear-gradient(90deg, #28a745 60%, #6ee7b7 100%);
+  color: #fff;
+}
+
+#btn-aceitar:hover {
+  background: linear-gradient(90deg, #6ee7b7 0%, #28a745 100%);
+  box-shadow: 0 4px 16px #0005;
+}
+
+#btn-recusar {
+  background: linear-gradient(90deg, #dc3545 60%, #ffb88c 100%);
+  color: #fff;
+}
+
+#btn-recusar:hover {
+  background: linear-gradient(90deg, #ffb88c 0%, #dc3545 100%);
+  box-shadow: 0 4px 16px #0005;
+}
+
+
+a[href="lista_ajudantes.html"]:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+h2 {
+  color: #ff7645;
+  text-align: center;
+  margin-top: 20px;
+}
+/* Estilo para o formulário de apostas */
+.form-apostas-main {
+  max-width: 540px;
+  margin: 40px auto;
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0005;
+  padding: 32px 28px 24px 28px;
+  color: #fff;
+  font-size: 1.1em;
+}
+.form-apostas-main h2 {
+  color: #ff7645;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+.form-apostas-main label {
+  font-weight: 600;
+  color: #ff7645;
+  margin-bottom: 0.3em;
+  display: block;
+}
+.form-apostas-main .pergunta {
+  margin-bottom: 1.5em;
+}
+.form-apostas-main input[type="radio"], 
+.form-apostas-main input[type="number"] {
+  margin-right: 8px;
+}
+.form-apostas-main input[type="number"] {
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #383736;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  width: 120px;
+  margin-top: 0.5em;
+}
+.form-apostas-main .opcoes {
+  margin: 0.5em 0 0.5em 0.5em;
+}
+.form-apostas-main button[type="submit"] {
+  background: linear-gradient(90deg, #ff7645 60%, #ffb88c 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0003;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-apostas-main button[type="submit"]:hover {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff7645 100%);
+  box-shadow: 0 4px 16px #0005;
 }

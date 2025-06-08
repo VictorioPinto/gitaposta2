@@ -22,7 +22,7 @@ form.addEventListener("submit", async function (e) {
     const result = await response.json();
     console.log("Candidato enviado com sucesso:", result);
     alert("Candidato enviado com sucesso!");
-    form.reset(); // Limpa o formulário após o envio
+    form.reset();
   } catch (error) {
     console.error("Erro ao enviar o candidato:", error);
     alert("Ocorreu um erro ao enviar o candidato. Tente novamente.");

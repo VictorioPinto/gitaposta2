@@ -2,11 +2,11 @@ const API_CANDIDATOS = "/candidatos-ajudante";
 const API_USUARIOS = "/usuarios";
 
 let usuarioCorrenteb = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
-if (!usuarioCorrenteb || !usuarioCorrenteb.moderador) {
+if (!usuarioCorrenteb.moderador) {
   alert("Acesso restrito a administradores.");
   window.location.href = "index.html";
 }
-
+console.log("Usuário corrente:", usuarioCorrente);
 
 async function carregarCandidatos() {
   try {
@@ -25,7 +25,7 @@ async function carregarCandidatos() {
         <td>${candidato.email}</td>
         <td>${candidato.motivacao}</td>
         <td>
-          <button onclick="aceitarAjudante('${candidato.email}')">Aceitar</button>
+          <button onclick="verDetalhes(${candidato.id})">Detalhes</button>
         </td>
       `;
       tabela.appendChild(tr);
@@ -34,6 +34,14 @@ async function carregarCandidatos() {
     alert("Erro ao carregar candidatos.");
   }
 }
+
+function verDetalhes(id) {
+  window.location.href = `detalhes_ajudante.html?id=${id}`;
+}
+window.verDetalhes = verDetalhes;
+
+window.aceitarAjudante = aceitarAjudante;
+window.addEventListener("DOMContentLoaded", carregarCandidatos);
 
 
 async function aceitarAjudante(email) {
@@ -67,7 +75,10 @@ async function aceitarAjudante(email) {
     alert("Erro ao aprovar candidato.");
   }
 }
-
+function verDetalhes(id) {
+  window.location.href = `detalhes_ajudante.html?id=${id}`;
+}
+window.verDetalhes = verDetalhes;
 
 window.aceitarAjudante = aceitarAjudante;
 window.addEventListener("DOMContentLoaded", carregarCandidatos);
