@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="barra-info">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="formulario_ajudante.html">Formulario</a></li>
+            <li><a href="lista_ajudantes.html">Lista</a></li>
+          </ul>
+        </nav>
+        <div class="dados-usuario">
+          <span id="userInfo"></span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="config-header">
+        <ul class="config-lista">
+          <li onclick="opencadastro()">Atualizar cadastro</li>
+          <li onclick="opensite()">Configurações da conta</li>
+          <li onclick="abrirTrocaSenha()">Alterar senha</li>
+          <li onclick="Modaldelete()">Deletar conta</li>
+        </ul>
+        <div class="config-usuario">
+          <form id="form-configuracoes" class="config-usuario-form">
+            <label for="login">Login</label>
+            <input
+              type="text"
+              id="login"
+              name="login"
+              placeholder="Login"
+              required
+            />
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Nome"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <label for="nomeAnonimo">Nome Anônimo</label>
+            <input
+              type="text"
+              id="nomeAnonimo"
+              name="nomeAnonimo"
+              placeholder="Nome Anônimo"
+              required
+            />
+            <button type="submit">Salvar</button>
+          </form>
+        </div>
+        <div class="config-site">
+          <label
+            ><input type="radio" name="modoClaro" value="true" /> Modo
+            Claro</label
+          >
+          <label
+            ><input type="radio" name="modoClaro" value="false" /> Modo
+            Escuro</label
+          >
+          <br />
+          <label
+            ><input type="radio" name="modoAnonimo" value="true" /> Modo
+            Anônimo</label
+          >
+          <label
+            ><input type="radio" name="modoAnonimo" value="false" /> Modo
+            Público</label
+          >
+        </div>
+        <div id="troca-senha">
+          <form id="form-troca-senha" class="troca-senha-form">
+            <label for="senha-atual">Senha atual</label>
+            <input
+              type="password"
+              id="senha-atual"
+              name="senha-atual"
+              required
+            />
+            <label for="nova-senha">Nova senha</label>
+            <input type="password" id="nova-senha" name="nova-senha" required />
+            <div class="troca-senha-botoes">
+              <button type="button" onclick="fecharTrocaSenha()">
+                Cancelar
+              </button>
+              <button type="submit">Salvar nova senha</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- Modal de Deletar Conta -->
+    <div
+      id="modal-delete-conta"
+      class="modal-delete-conta-bg"
+      style="display: none"
+    >
+      <div class="modal-delete-conta-box">
+        <h3>Deletar conta</h3>
+        <p>
+          Tem certeza que deseja deletar sua conta? Esta ação não pode ser
+          desfeita.
+        </p>
+        <div class="modal-delete-conta-botoes">
+          <button id="cancelar-delete-conta" type="button">Cancelar</button>
+          <button id="confirmar-delete-conta" type="button" class="danger">
+            Deletar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/configuracoes.js"></script>
+  </body>
+</html>

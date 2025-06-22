@@ -1,46 +1,150 @@
 {
   "usuarios": [
     {
-      "login": "111",
-      "senha": "111",
-      "nome": "111",
-      "email": "111",
-      "ajudante": true,
-      "moderador": true,
-      "id": 1
-    },
-    {
-      "login": "333",
-      "senha": "333",
-      "nome": "333333333333",
-      "email": "333333333",
-      "ajudante": true,
-      "moderador": false,
-      "id": 2
-    },
-    {
-      "login": "444",
-      "senha": "444",
-      "nome": "444",
-      "email": "444",
+      "login": "2",
+      "senha": "2",
+      "nome": "2",
+      "email": "2@2",
       "ajudante": false,
       "moderador": false,
-      "id": 3
-    }
-  ],
-  "mensagens": [],
-  "candidatos-ajudante": [
-    {
-      "experiencia": "eu falei para ela nao se matar",
-      "motivacao": "se eu quero eu posso",
-      "disponibilidade": "12:00 ate as 26:00",
-      "vivencia": "nao",
-      "como_ajudar": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "termos": "on",
-      "nome": "111",
-      "email": "111",
+      "nomeAnonimo": " 830",
+      "modoAnonimo": false,
+      "modoClaro": false,
       "id": 1
+    },
+    {
+      "login": "a",
+      "senha": "a",
+      "nome": "a2",
+      "email": "a@aaaa",
+      "ajudante": false,
+      "moderador": false,
+      "nomeAnonimo": " 896",
+      "modoAnonimo": true,
+      "modoClaro": false,
+      "id": 2
     }
   ],
+  "mensagens": [
+    {
+      "nome": "a",
+      "texto": "a",
+      "id_usuario": 1,
+      "id": 10
+    },
+    {
+      "nome": "a",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 11
+    },
+    {
+      "nome": "a",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 12
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 13
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aa",
+      "id_usuario": 1,
+      "id": 14
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 15
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 16
+    },
+    {
+      "nome": "b",
+      "texto": "aaaaa",
+      "id": 17
+    },
+    {
+      "nome": "b",
+      "texto": "aa",
+      "id": 18
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "a",
+      "id_usuario": 1,
+      "id": 19
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "a",
+      "id_usuario": 1,
+      "id": 20
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaaaa",
+      "id_usuario": 1,
+      "id": 21
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 22
+    },
+    {
+      "nome": "a",
+      "texto": "aaa",
+      "id_usuario": 1,
+      "id": 23
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaaaaa",
+      "id_usuario": 1,
+      "id": 24
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaaa",
+      "id_usuario": 1,
+      "id": 25
+    },
+    {
+      "nome": "usuario 983",
+      "texto": "aaaaaa",
+      "id_usuario": 1,
+      "id": 26
+    },
+    {
+      "nome": "a",
+      "texto": "aaaa",
+      "id_usuario": 1,
+      "id": 27
+    },
+    {
+      "nome": "usuario 896",
+      "texto": "aaaaa",
+      "id_usuario": 2,
+      "id": 28
+    },
+    {
+      "nome": "a2",
+      "texto": "aaaaa",
+      "id_usuario": 2,
+      "id": 29
+    }
+  ],
+  "candidatos-ajudante": [],
   "apostas": []
 }

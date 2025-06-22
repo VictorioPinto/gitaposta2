@@ -54,9 +54,6 @@ body {
   margin-right: 20px;
 }
 
-main {
-  padding: 20px;
-}
 #chat-container {
   margin: 10vh 20vw 0px;
   background-color: rgb(34, 33, 33);
@@ -127,15 +124,13 @@ main {
 }
 .config-button {
   text-align: center;
-  
+
   svg {
-    
     width: 1em;
     height: 1em;
     margin: 0.5em;
     fill: white;
   }
-  
 }
 .config-button:hover {
   svg {
@@ -152,7 +147,7 @@ main {
 
 .options {
   position: absolute;
-  transform: translateX(-50%) translateY(-50%); ;
+  transform: translateX(-50%) translateY(-50%);
   background: #222;
   border-radius: 8px;
   box-shadow: 0 2px 8px #0008;
@@ -183,7 +178,6 @@ main {
 .options ul li button svg {
   width: 1.2em;
   height: 1.2em;
-  
 }
 
 /* Estilo para o formulário de ajudante */
@@ -270,7 +264,8 @@ main {
   margin-top: 30px;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   vertical-align: middle !important;
   text-align: left;
 }
@@ -363,7 +358,6 @@ main {
   box-shadow: 0 4px 16px #0005;
 }
 
-
 a[href="lista_ajudantes.html"]:hover {
   color: #fff;
   text-decoration: underline;
@@ -398,7 +392,7 @@ h2 {
 .form-apostas-main .pergunta {
   margin-bottom: 1.5em;
 }
-.form-apostas-main input[type="radio"], 
+.form-apostas-main input[type="radio"],
 .form-apostas-main input[type="number"] {
   margin-right: 8px;
 }
@@ -433,4 +427,687 @@ h2 {
 .form-apostas-main button[type="submit"]:hover {
   background: linear-gradient(90deg, #ffb88c 0%, #ff7645 100%);
   box-shadow: 0 4px 16px #0005;
+}
+
+.userinfo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0;
+}
+
+#userinfo-button svg {
+  width: 2.5em;
+  height: 2.5em;
+  fill: black;
+  z-index: 99;
+  transition: fill 0.3s;
+}
+#userinfo-button svg:hover {
+  fill: #ff7645;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: #232323;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0008;
+  min-width: 140px;
+  z-index: 100;
+  margin-top: 0.5em;
+}
+
+.user-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-dropdown-item {
+  background: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.user-dropdown-item:hover {
+  background: #333;
+}
+#userinfo-button.active svg {
+  fill: #ff7645; /* cor quando o menu está aberto */
+}
+.config-lista {
+  background-color: #232323;
+  box-shadow: 0 2px 8px #0008;
+  z-index: 1000;
+  padding-left: 0;
+  color: #fff;
+  list-style: none;
+  margin: 0;
+  width: 20vw;
+  height: 100vh;
+}
+.config-header {
+  width: 100%;
+  display: flex;
+}
+.config-lista li {
+  text-align: center;
+  padding: 2vh 0;
+}
+.config-lista li:hover {
+  background-color: #383736;
+  color: #ff7645;
+  cursor: pointer;
+}
+
+/* Estilo para a tela de configurações */
+.config-header {
+  width: 100%;
+  display: flex;
+  min-height: 80vh;
+  background: #232323;
+  border-radius: 12px;
+}
+
+.config-lista {
+  background-color: #232323;
+  box-shadow: 0 2px 8px #0008;
+  z-index: 1000;
+  padding-left: 0;
+  color: #fff;
+  list-style: none;
+  margin: 0;
+  width: 20vw;
+  min-width: 10vw;
+  height: 100%;
+  border-radius: 12px 0 0 12px;
+  border-right: 1px solid #383736;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.config-lista li {
+  text-align: center;
+  padding: 2vh 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 1px solid #383736;
+}
+.config-lista li:last-child {
+  border-bottom: none;
+}
+.config-lista li:hover,
+.config-lista li.active {
+  background-color: #383736;
+  color: #ff7645;
+}
+
+.config-usuario,
+.config-site,
+#troca-senha {
+  flex: 1;
+  padding: 32px 40px;
+  display: none;
+  background: #232323;
+  border-radius: 0 12px 12px 0;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.config-usuario.active,
+.config-site.active,
+#troca-senha.active {
+  display: block;
+}
+
+.config-usuario-form label,
+.troca-senha-form label {
+  color: #ff7645;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.config-usuario-form input,
+.troca-senha-form input {
+  width: 100%;
+  padding: 0.7em 1em;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #383736;
+  color: #fff;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+.config-usuario-form input:focus,
+.troca-senha-form input:focus {
+  border: 1.5px solid #ff7645;
+  outline: none;
+}
+
+.config-usuario-form button,
+.troca-senha-form button {
+  background: linear-gradient(90deg, #ff7645 60%, #ffb88c 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.config-usuario-form button:hover,
+.troca-senha-form button:hover {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff7645 100%);
+  box-shadow: 0 4px 16px #0005;
+}
+
+.config-site label {
+  color: #ff7645;
+  font-weight: 500;
+  margin-right: 16px;
+  font-size: 1.05em;
+}
+
+.troca-senha-botoes {
+  text-align: right;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+/* Modal de deletar conta */
+.modal-delete-conta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-delete-conta-box {
+  background: #232323;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2em 2.5em;
+  max-width: 350px;
+  box-shadow: 0 4px 24px #0008;
+  text-align: center;
+}
+.modal-delete-conta-botoes {
+  margin-top: 2em;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+.modal-delete-conta-botoes button {
+  padding: 0.6em 1.5em;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: #ff7645;
+  color: #fff;
+  transition: background 0.2s;
+}
+.modal-delete-conta-botoes button.danger {
+  background: #c0392b;
+}
+.modal-delete-conta-botoes button:hover {
+  opacity: 0.85;
+}
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-box {
+  background: #232323;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2em 2.5em;
+  max-width: 350px;
+  box-shadow: 0 4px 24px #0008;
+  text-align: center;
+}
+.modal-box input {
+  width: 100%;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #383736;
+  color: #fff;
+  padding: 0.5em;
+}
+.modal-box button {
+  margin-top: 1em;
+}
+.noticias {
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0005;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px 28px 24px 28px;
+  color: #fff;
+}
+.noticias ul {
+  list-style: none;
+  padding: 0;
+}
+.noticias li {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #383736;
+  padding-bottom: 1em;
+}
+.noticias a {
+  color: #ff7645;
+  text-decoration: none;
+}
+.noticias a:hover {
+  text-decoration: underline;
+}
+/* Geral */
+body {
+  background: #181818;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegação */
+.barra-info {
+  background: #232323;
+  padding: 0.7em 0;
+  box-shadow: 0 2px 8px #0005;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1em;
+  display: flex;
+  gap: 1.5em;
+}
+.menu a {
+  color: #ffb88c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+.menu a:hover {
+  color: #ff7645;
+}
+.dados-usuario {
+  margin-right: 2em;
+}
+
+/* Boas-vindas */
+.boas-vindas {
+  background: linear-gradient(90deg, #232323 60%, #383736 100%);
+  border-radius: 16px;
+  margin: 40px auto 32px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 24px #0005;
+  padding: 48px 24px 32px 24px;
+}
+.boas-vindas h1 {
+  font-weight: bold;
+  color: #ffb88c;
+}
+.boas-vindas .btn-destaque {
+  background: linear-gradient(90deg, #ff7645 60%, #ffb88c 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7em 2em;
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0003;
+}
+.boas-vindas .btn-destaque:hover {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff7645 100%);
+  box-shadow: 0 4px 16px #0005;
+}
+
+/* Recursos rápidos */
+.recursos-rapidos {
+  margin: 0 auto 32px auto;
+  max-width: 1100px;
+}
+.recursos-rapidos h2 {
+  color: #ffb88c;
+  font-weight: bold;
+}
+.recursos-rapidos .cards {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.recursos-rapidos .card {
+  background: #232323;
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 2px 12px #0005;
+  padding: 2em 1.5em;
+  min-width: 260px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+.recursos-rapidos .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px #0008;
+}
+.recursos-rapidos .card-title,
+.recursos-rapidos .card h3 {
+  color: #ff7645;
+  font-weight: bold;
+}
+.recursos-rapidos .btn-outline-warning {
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+/* Carrossel de notícias */
+.carrossel-area {
+  max-width: 900px;
+  margin: 40px auto 32px auto;
+}
+.carrossel-area .carousel-inner {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.carousel-caption {
+  background: rgba(30, 30, 30, 0.7);
+  border-radius: 12px;
+  padding: 1.5em;
+}
+.carousel-caption h5 {
+  color: #ffb88c;
+  font-weight: bold;
+}
+.carousel-caption a {
+  color: #ffb88c;
+  text-decoration: underline;
+}
+.carousel-caption a:hover {
+  color: #ff7645;
+}
+
+/* Depoimentos */
+.depoimentos {
+  max-width: 900px;
+  margin: 40px auto 32px auto;
+}
+.depoimentos h2 {
+  color: #ffb88c;
+  font-weight: bold;
+  text-align: center;
+}
+.depoimentos .blockquote {
+  border-left: 5px solid #ff7645;
+  font-size: 1.15em;
+  background: #232323;
+  border-radius: 12px;
+  padding: 1.5em 2em;
+  margin-bottom: 1.5em;
+  color: #fff;
+  box-shadow: 0 2px 12px #0005;
+}
+
+/* Modal login/registro */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-box {
+  background: #232323;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2em 2.5em;
+  max-width: 350px;
+  box-shadow: 0 4px 24px #0008;
+  text-align: center;
+}
+.modal-box input {
+  width: 100%;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #383736;
+  color: #fff;
+  padding: 0.5em;
+}
+.modal-box button {
+  margin-top: 1em;
+  border-radius: 50px;
+  font-weight: bold;
+  background: #ff7645;
+  color: #fff;
+  border: none;
+  padding: 0.6em 2em;
+}
+.modal-box button:hover {
+  background: #ffb88c;
+  color: #232323;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .boas-vindas,
+  .carrossel-area,
+  .recursos-rapidos,
+  .depoimentos {
+    max-width: 98vw;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .recursos-rapidos .cards {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .boas-vindas,
+  .carrossel-area,
+  .recursos-rapidos,
+  .depoimentos {
+    margin: 16px 0;
+    padding: 1em 0.5em;
+  }
+  .modal-box {
+    padding: 1em 0.5em;
+  }
+}
+/* MODO CLARO */
+body.light-mode {
+  background: #f7f7f7;
+  color: #232323;
+}
+body.light-mode .barra-info,
+body.light-mode .boas-vindas,
+body.light-mode .recursos-rapidos .card,
+body.light-mode .carrossel-area,
+body.light-mode .depoimentos,
+body.light-mode .modal-box,
+body.light-mode .modal-delete-conta-box,
+body.light-mode .noticias,
+body.light-mode #form-ajudante,
+body.light-mode .form-apostas-main,
+body.light-mode #detalhes,
+body.light-mode .table,
+body.light-mode .user-dropdown,
+body.light-mode .config-lista,
+body.light-mode .config-header,
+body.light-mode .config-usuario,
+body.light-mode .config-site,
+body.light-mode #troca-senha {
+  background: #fff !important;
+  color: #232323 !important;
+  box-shadow: 0 4px 24px #0001;
+}
+
+body.light-mode .menu a,
+body.light-mode .recursos-rapidos .card-title,
+body.light-mode .recursos-rapidos .card h3,
+body.light-mode .depoimentos h2,
+body.light-mode .boas-vindas h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4 {
+  color: #ff7645 !important;
+}
+
+body.light-mode .menu a:hover {
+  color: #232323 !important;
+}
+
+body.light-mode .recursos-rapidos .card,
+body.light-mode .depoimentos .blockquote {
+  background: #f7f7f7 !important;
+  color: #232323 !important;
+}
+
+body.light-mode .depoimentos .blockquote {
+  border-left: 5px solid #ff7645;
+}
+
+body.light-mode .carousel-caption {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #232323 !important;
+}
+
+body.light-mode .carousel-caption h5 {
+  color: #ff7645 !important;
+}
+
+body.light-mode .carousel-caption a {
+  color: #ff7645 !important;
+}
+
+body.light-mode .modal-box input,
+body.light-mode .modal-box textarea,
+body.light-mode .modal-box select,
+body.light-mode #form-ajudante input,
+body.light-mode #form-ajudante textarea,
+body.light-mode #form-ajudante select,
+body.light-mode .form-apostas-main input,
+body.light-mode .form-apostas-main textarea,
+body.light-mode .form-apostas-main select {
+  background: #f0f0f0 !important;
+  color: #232323 !important;
+  border: 1px solid #ccc !important;
+}
+
+body.light-mode .modal-box button,
+body.light-mode #form-ajudante button,
+body.light-mode .form-apostas-main button,
+body.light-mode .table td button,
+body.light-mode .config-usuario-form button,
+body.light-mode .troca-senha-form button {
+  background: linear-gradient(90deg, #ffb88c 60%, #ff7645 100%) !important;
+  color: #232323 !important;
+}
+
+body.light-mode .modal-box button:hover,
+body.light-mode #form-ajudante button:hover,
+body.light-mode .form-apostas-main button:hover,
+body.light-mode .table td button:hover,
+body.light-mode .config-usuario-form button:hover,
+body.light-mode .troca-senha-form button:hover {
+  background: linear-gradient(90deg, #ff7645 0%, #ffb88c 100%) !important;
+  color: #fff !important;
+}
+
+body.light-mode .table th {
+  background: #ffb88c !important;
+  color: #232323 !important;
+  border-bottom: 2px solid #ff7645 !important;
+}
+
+body.light-mode .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f7f7f7 !important;
+}
+
+body.light-mode .table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #fff !important;
+}
+
+body.light-mode .options,
+body.light-mode .user-dropdown {
+  background: #fff !important;
+  color: #232323 !important;
+}
+
+body.light-mode .options ul li button,
+body.light-mode .user-dropdown-item {
+  color: #232323 !important;
+}
+
+body.light-mode .options ul li button:hover,
+body.light-mode .user-dropdown-item:hover {
+  background: #ffb88c !important;
+  color: #232323 !important;
+}
+
+body.light-mode .config-lista li:hover,
+body.light-mode .config-lista li.active {
+  background: #ffb88c !important;
+  color: #232323 !important;
+}
+
+body.light-mode .modal-delete-conta-botoes button.danger {
+  background: #c0392b !important;
+  color: #fff !important;
 }

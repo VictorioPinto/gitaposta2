@@ -27,7 +27,6 @@ const deleteSVG = `
   <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
-const usuarioCorrentes = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -45,21 +44,21 @@ window.addEventListener("DOMContentLoaded", async () => {
 function addMessage(nome, texto, id_usuario, id) {
   const messageDiv = document.createElement("div");
   messageDiv.className = "message";
-  messageDiv.dataset.id = id; 
-  if (id_usuario === usuarioCorrentes.id) {
+  messageDiv.dataset.id = id;
+  if (id_usuario === usuarioCorrente.id) {
     messageDiv.classList.add("self");
   }
 
   const label = document.createElement("label");
   label.className = "username";
-  label.textContent = nome;
+  label.textContent = nome; // <-- Corrigido aqui
 
   const p = document.createElement("p");
   p.className = "text";
   p.textContent = texto;
   messageDiv.appendChild(label);
 
-  if (usuarioCorrentes.moderador) {
+  if (usuarioCorrente.moderador) {
     const configbutton = document.createElement("span");
     configbutton.className = "config-button";
     configbutton.innerHTML = threeDotsSVG;
@@ -78,7 +77,10 @@ function addMessage(nome, texto, id_usuario, id) {
             <button onclick="deleteMessage(${id})" title="Excluir">${deleteSVG} Excluir</button>
           </li>
           <li>
-            <button onclick="editMessage(${id}, '${texto.replace(/'/g, "\\'")}')" title="Editar">${editSVG} Editar</button>
+            <button onclick="editMessage(${id}, '${texto.replace(
+        /'/g,
+        "\\'"
+      )}')" title="Editar">${editSVG} Editar</button>
           </li>
         </ul>
       `;
@@ -96,48 +98,65 @@ form.addEventListener("submit", async function (e) {
   const text = input.value.trim();
   if (text === "") return;
 
+  // Usa o nome anônimo se o modoAnonimo estiver ativado
+  const nomeParaEnviar = usuarioCorrente.modoAnonimo
+    ? nomeAnonimoreturn(usuarioCorrente)
+    : usuarioCorrente.nome;
+
   try {
     await fetch(CHAT_API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nome: usuarioCorrentes.nome, texto: text, id_usuario: usuarioCorrentes.id }),
+      body: JSON.stringify({
+        nome: nomeParaEnviar,
+        texto: text,
+        id_usuario: usuarioCorrente.id,
+      }),
     });
     const res = await fetch(CHAT_API_URL);
     const msgs = await res.json();
     messages.innerHTML = "";
     msgs.forEach((msg) => {
-  addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
-});
+      addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
+    });
     input.value = "";
   } catch (err) {
     alert("Erro ao enviar mensagem!");
   }
 });
-window.deleteMessage = async function(id) {
+
+window.deleteMessage = async function (id) {
   if (!confirm("Tem certeza que deseja excluir esta mensagem?")) return;
   try {
     await fetch(`${CHAT_API_URL}/${id}`, { method: "DELETE" });
-    const msgDiv = document.querySelector(`.message[data-id="${id}"]`);
-    if (msgDiv) msgDiv.remove();
+    // Após deletar, recarrega as mensagens do backend
+    const res = await fetch(CHAT_API_URL);
+    const msgs = await res.json();
+    messages.innerHTML = "";
+    msgs.forEach((msg) => {
+      addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
+    });
   } catch (err) {
     alert("Erro ao excluir mensagem!");
   }
 };
 
-window.editMessage = async function(id, oldText) {
+window.editMessage = async function (id, oldText) {
   const newText = prompt("Editar mensagem:", oldText);
   if (newText === null || newText.trim() === "") return;
   try {
     await fetch(`${CHAT_API_URL}/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ texto: newText })
+      body: JSON.stringify({ texto: newText }),
     });
-    const msgDiv = document.querySelector(`.message[data-id="${id}"]`);
-    if (msgDiv) {
-      const textEl = msgDiv.querySelector(".text");
-      if (textEl) textEl.textContent = newText;
-    }
+    // Atualiza a mensagem editada na tela
+    const res = await fetch(CHAT_API_URL);
+    const msgs = await res.json();
+    messages.innerHTML = "";
+    msgs.forEach((msg) => {
+      addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
+    });
   } catch (err) {
     alert("Erro ao editar mensagem!");
   }
