@@ -1,397 +1,239 @@
-# Introdução
-
+Introdução
 Informações básicas do projeto.
 
-* **Projeto:** [NOME DO PROJETO]
-* **Repositório GitHub:** [LINK PARA O REPOSITÓRIO NO GITHUB]
-* **Membros da equipe:**
-
-  * [Fulano](https://github.com/fulano) ⚠️ EXEMPLO ⚠️
-  * [Beltrano](https://github.com/beltrano) ⚠️ EXEMPLO ⚠️
-  * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
-
+Projeto: Vida Sem Apostas
+Repositório GitHub: [COLOQUE O LINK PARA O REPOSITÓRIO NO GITHUB AQUI]
+Membros da equipe:
+Victório Neto
+Lucas Avelar
 A documentação do projeto é estruturada da seguinte forma:
 
-1. Introdução
-2. Contexto
-3. Product Discovery
-4. Product Design
-5. Metodologia
-6. Solução
-7. Referências Bibliográficas
+Introdução
+Contexto
+Product Discovery
+Product Design
+Metodologia
+Solução
+Referências Bibliográficas
+✅ Documentação de Design Thinking (MIRO)
 
-✅ [Documentação de Design Thinking (MIRO)](files/processo-dt.pdf)
-
-# Contexto
-
+Contexto
 Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa e público-alvo.
 
-## Problema
+Problema
+O vício em apostas online é um problema crescente que afeta a saúde financeira e mental de muitas pessoas. A facilidade de acesso a plataformas de apostas e a publicidade massiva contribuem para o aumento do número de indivíduos que desenvolvem um comportamento de jogo problemático. Muitos viciados sentem vergonha e isolamento, dificultando a busca por ajuda. Há uma necessidade de um ambiente seguro, anônimo e solidário onde essas pessoas possam encontrar apoio, compartilhar experiências e acessar recursos para superar o vício.
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+Objetivos
+Objetivo Geral:
+Desenvolver uma aplicação web chamada "Vida Sem Apostas" para fornecer um espaço de apoio comunitário e recursos informativos para pessoas que lutam contra o vício em apostas.
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
->
-> **Orientações**:
->
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Objetivos Específicos:
 
-## Objetivos
+Criar uma plataforma de chat anônimo para que os usuários possam conversar com voluntários e outros membros da comunidade de forma segura.
+Disponibilizar um formulário para que os usuários possam refletir sobre seus hábitos de aposta e visualizar dados estatísticos agregados da comunidade.
+Implementar um sistema de voluntariado, permitindo que pessoas recuperadas ou que queiram ajudar se tornem "Ajudantes".
+Oferecer um portal de notícias e avisos relevantes sobre o tema de apostas e seus riscos.
+Justificativa
+A proliferação de casas de apostas online tornou o vício em jogos de azar uma questão de saúde pública. Este projeto se justifica pela urgência em oferecer uma solução tecnológica e acessível que possa servir como primeiro ponto de contato para quem busca ajuda. Ao criar uma comunidade de apoio mútua e anônima, a plataforma "Vida Sem Apostas" visa quebrar a barreira do estigma associado ao vício e fornecer ferramentas práticas e informativas que auxiliem no processo de recuperação e conscientização.
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+Público-Alvo
+O projeto destina-se a três perfis principais de usuários:
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
->
-> **Orientações**:
->
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Pessoas com vício em apostas: Indivíduos que estão lutando contra o vício e procuram um espaço seguro para desabafar, obter informações e encontrar apoio de pares e voluntários.
+Voluntários (Ajudantes): Pessoas que já superaram o vício ou que têm experiência em grupos de apoio e desejam ajudar outros a trilhar o mesmo caminho.
+Moderadores/Administradores: Responsáveis pela gestão da plataforma, garantindo a segurança, a qualidade das interações e a aprovação de novos voluntários.
+Product Discovery
+Etapa de Definição
+Personas
+Com base nas funcionalidades e nos formulários do site, podemos identificar três personas principais:
 
-## Justificativa
+Persona 1: João, o Apostador Conflitado
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+Perfil: Homem, 28 anos. Começou a apostar por diversão, mas agora aposta diariamente, gastando mais do que pode e já deixou de pagar contas por causa do jogo. Sente-se envergonhado e isolado, mas quer parar e reconhece que precisa de ajuda.
+Necessidades: Um lugar anônimo para conversar sem ser julgado, entender se seus hábitos são problemáticos e encontrar apoio para tentar parar.
+Persona 2: Maria, a Voluntária Empática
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
->
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
->
-> **Orientações**:
->
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Perfil: Mulher, 40 anos. Teve uma experiência próxima com o vício em apostas na família e, após ver a recuperação de um ente querido, sente-se motivada a ajudar outras pessoas. Tem disponibilidade à noite e quer compartilhar sua experiência de forma construtiva.
+Necessidades: Uma plataforma onde possa se candidatar para ser voluntária, um sistema organizado para interagir com quem precisa de ajuda e a capacidade de fazer a diferença.
+Persona 3: Admin, o Guardião da Comunidade
 
-## Público-Alvo
-
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Descreva quais são as pessoas que usarão a sua aplicação indicando os diferentes perfis. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
->
-> **Orientações**:
->
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
-
-# Product Discovery
-
-## Etapa de Entendimento
-
-**✳️✳️✳️ APRESENTE OS ARTEFATOS DA ETAPA  ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nessa etapa, vamos trabalhar com a metdologia de Design Thinking para compreender com maior profundidade o problema a ser tratado. Nesse processo, vamos elaborar:
->
-> * **Matriz CSD**: também conhecida por Matriz de Alinhamento, é uma ferramenta utilizada no Design Thinking para organizar informações e facilitar o processo de tomada de decisão e solução de problemas;
-> * **Mapa de stakeholders**: ferramenta que nos permite compreender o grupo de pessoas e entidades que devemos estudar e conversar para entender mais sobre o problema
-> * **Entrevistas qualitativas**: série de entrevistas qualitativas para validar suposições e solucionar as dúvidas com as principais pessoas envolvidas;
-> * **Highlights de pesquisa**: um compilado do levantamento realizado por meio das entrevistas.
-
-## Etapa de Definição
-
-### Personas
-
-**✳️✳️✳️ APRESENTE OS DIAGRAMAS DE PERSONAS ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
->
-> **Orientações**:
->
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-
-# Product Design
-
-Nesse momento, vamos transformar os insights e validações obtidos em soluções tangíveis e utilizáveis. Essa fase envolve a definição de uma proposta de valor, detalhando a prioridade de cada ideia e a consequente criação de wireframes, mockups e protótipos de alta fidelidade, que detalham a interface e a experiência do usuário.
-
-## Histórias de Usuários
-
+Perfil: Administrador do sistema. Responsável por manter a plataforma segura e funcional.
+Necessidades: Ferramentas para moderar o conteúdo do chat, um processo para avaliar e aprovar novos voluntários, e um meio de comunicar avisos importantes para toda a comunidade.
+Product Design
+Histórias de Usuários
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
-| EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
-| --------------------- | ------------------------------------------ | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas ⚠️ EXEMPLO ⚠️ | Não esquecer de fazê-las             |
-| Administrador         | Alterar permissões ⚠️ EXEMPLO ⚠️      | Permitir que possam administrar contas |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
->
-> **Orientações**:
->
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
-## Proposta de Valor
-
-**✳️✳️✳️ APRESENTE O DIAGRAMA DA PROPOSTA DE VALOR PARA CADA PERSONA ✳️✳️✳️**
-
-##### Proposta para Persona XPTO ⚠️ EXEMPLO ⚠️
-
-![Exemplo de proposta de valor](images/exemplo-proposta-valor.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O mapa da proposta de valor é uma ferramenta que nos ajuda a definir qual tipo de produto ou serviço melhor atende às personas definidas anteriormente.
-
-## Requisitos
-
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
-
-### Requisitos Funcionais
-
-| ID     | Descrição do Requisito                                   | Prioridade |
-| ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-
-### Requisitos não Funcionais
-
-| ID      | Descrição do Requisito                                                              | Prioridade |
-| ------- | ------------------------------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-| RNF-002 | Deve processar requisições do usuário em no máximo 3s ⚠️ EXEMPLO ⚠️          | BAIXA      |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Os requisitos de um projeto são classificados em dois grupos:
->
-> - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
->   correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-> - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
->   correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
->
-> Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
->
-> **Orientações**:
->
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
-## Projeto de Interface
-
-Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
-
-### Wireframes
-
-Estes são os protótipos de telas do sistema.
-
-**✳️✳️✳️ COLOQUE AQUI OS PROTÓTIPOS DE TELAS COM TÍTULO E DESCRIÇÃO ✳️✳️✳️**
-
-##### TELA XPTO ⚠️ EXEMPLO ⚠️
-
-Descrição para a tela XPTO
-
-![Exemplo de wireframe](images/exemplo-wireframe.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
->
-> **Orientações**:
->
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-
-### User Flow
-
-**✳️✳️✳️ COLOQUE AQUI O DIAGRAMA DE FLUXO DE TELAS ✳️✳️✳️**
-
-![Exemplo de fluxo de telas](images/exemplo-userflow.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
->
-> **Orientações**:
->
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
-
-### Protótipo Interativo
-
-**✳️✳️✳️ COLOQUE AQUI UM IFRAME COM SEU PROTÓTIPO INTERATIVO ✳️✳️✳️**
-
-✅ [Protótipo Interativo (MarvelApp)](https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false)  ⚠️ EXEMPLO ⚠️
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Um protótipo interativo apresenta o projeto de interfaces e permite ao usuário navegar pelas funcionalidades como se estivesse lidando com o software pronto. Utilize as mesmas ferramentas de construção de wireframes para montagem do seu protótipo interativo. Inclua o link para o protótipo interativo do projeto.
-
-# Metodologia
-
-Detalhes sobre a organização do grupo e o ferramental empregado.
-
-## Ferramentas
-
-Relação de ferramentas empregadas pelo grupo durante o projeto.
-
-| Ambiente                    | Plataforma | Link de acesso                                     |
-| --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
-|                             |            |                                                    |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) Editor de código, (2) )ferramentas de comunicação, (3) )ferramentas de diagramação, (4) )plataformas de hospedagem, entre outras.
-
-## Gerenciamento do Projeto
-
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
-
-![Exemplo de Kanban](images/exemplo-kanban.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
->
-> **Orientações**:
->
-> - [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-> - [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-> - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
-# Solução Implementada
-
-Esta seção apresenta todos os detalhes da solução criada no projeto.
-
-## Vídeo do Projeto
-
-O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
-
-[![Vídeo do projeto](images/video.png)](https://www.youtube.com/embed/70gGoFyGeqQ)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e direta.
->
-> Inclua um link para o vídeo do projeto.
-
-## Funcionalidades
-
-Esta seção apresenta as funcionalidades da solução.Info
-
-##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
-
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
-
-* **Estrutura de dados:** [Contatos](#ti_ed_contatos)
-* **Instruções de acesso:**
-  * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção Cadastros
-  * Em seguida, escolha a opção Contatos
-* **Tela da funcionalidade**:
-
-![Tela de Funcionalidade](images/exemplo-funcionalidade.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
-
-## Estruturas de Dados
-
-Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
-
-##### Estrutura de Dados - Contatos   ⚠️ EXEMPLO ⚠️
-
-Contatos da aplicação
-
-```json
-  {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
-  
-```
-
-##### Estrutura de Dados - Usuários  ⚠️ EXEMPLO ⚠️
-
-Registro dos usuários do sistema utilizados para login e para o perfil do sistema
-
-```json
-  {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
-  }
-```
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
->
-> Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
->
-> **Orientações:**
->
-> * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-> * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
-
-## Módulos e APIs
-
-Esta seção apresenta os módulos e APIs utilizados na solução
-
-**Images**:
-
-* Unsplash - [https://unsplash.com/](https://unsplash.com/) ⚠️ EXEMPLO ⚠️
-
-**Fonts:**
-
-* Icons Font Face - [https://fontawesome.com/](https://fontawesome.com/) ⚠️ EXEMPLO ⚠️
-
-**Scripts:**
-
-* jQuery - [http://www.jquery.com/](http://www.jquery.com/) ⚠️ EXEMPLO ⚠️
-* Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/) ⚠️ EXEMPLO ⚠️
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
-
-# Referências
-
-As referências utilizadas no trabalho foram:
-
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
->
-> **Orientações**:
->
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+EU COMO... QUERO/PRECISO ... PARA ...
+João, o Apostador Conversar anonimamente em um chat Poder desabafar e receber conselhos sem medo de ser identificado.
+João, o Apostador Preencher um formulário sobre meus hábitos de aposta Ter uma visão clara do meu comportamento e compará-lo com dados gerais da comunidade.
+Maria, a Voluntária Preencher um formulário de candidatura para ser Ajudante Oferecer meu tempo e experiência para ajudar pessoas que estão sofrendo com o vício.
+Admin Analisar e aprovar as candidaturas de Ajudantes Garantir que os voluntários sejam adequados para oferecer suporte na plataforma.
+Admin Publicar avisos na plataforma Manter todos os usuários informados sobre novidades, manutenções ou eventos.
+Admin Moderar as mensagens do chat Remover conteúdo inadequado e garantir que o chat seja um ambiente seguro e de apoio.
+Qualquer usuário Acessar notícias atualizadas sobre o mundo das apostas Manter-me informado sobre os riscos e as regulamentações do setor.
+Qualquer usuário Configurar minha conta para usar um tema claro ou escuro Ter uma experiência de visualização mais confortável.
+
+Exportar para as Planilhas
+Requisitos
+Requisitos Funcionais
+ID Descrição do Requisito Prioridade
+RF-001 O sistema deve permitir o cadastro e login de usuários. ALTA
+RF-002 O sistema deve fornecer um chat para comunicação anônima entre os usuários. ALTA
+RF-003 Moderadores devem poder excluir e editar mensagens do chat. ALTA
+RF-004 Usuários devem poder preencher e enviar um formulário sobre seus hábitos de aposta. ALTA
+RF-005 O sistema deve exibir gráficos com as estatísticas agregadas das respostas do formulário. MÉDIA
+RF-006 Usuários devem poder se candidatar para serem "Ajudantes" através de um formulário. ALTA
+RF-007 Moderadores devem poder visualizar, aceitar e recusar candidaturas de Ajudantes. ALTA
+RF-008 Moderadores devem poder publicar avisos para todos os usuários. MÉDIA
+RF-009 O sistema deve permitir que o usuário altere seus dados cadastrais, senha e exclua sua conta. BAIXA
+RF-010 O sistema deve exibir notícias de uma API externa. BAIXA
+
+Exportar para as Planilhas
+Requisitos não Funcionais
+ID Descrição do Requisito Prioridade
+RNF-001 O sistema deve ser responsivo para rodar em dispositivos móveis. ALTA
+RNF-002 A troca de mensagens no chat deve ocorrer em tempo real, sem a necessidade de recarregar a página. ALTA
+RNF-003 O sistema deve garantir o anonimato dos usuários no chat quando o "Modo Anônimo" estiver ativo. ALTA
+RNF-004 As informações dos usuários devem ser armazenadas de forma segura no servidor. ALTA
+RNF-005 A interface deve ser intuitiva e fácil de usar para pessoas com diferentes níveis de literacia digital. MÉDIA
+
+Exportar para as Planilhas
+Projeto de Interface
+Os artefatos de Wireframes e User Flow não foram disponibilizados. A interface do sistema pode ser visualizada diretamente na aplicação implementada. As principais telas são:
+
+Página Inicial: Apresenta o carrossel de notícias e os cartões de acesso rápido às principais funcionalidades.
+Chat: Contém a área de visualização de mensagens e o campo para envio.
+Formulários: Telas dedicadas para o preenchimento do formulário de apostas e do formulário para se tornar ajudante.
+Gráficos: Painel com a visualização dos dados estatísticos.
+Páginas de Admin: Telas para listagem de candidatos e criação de avisos.
+Protótipo Interativo
+O protótipo interativo é a própria aplicação web implementada, acessível através do servidor local.
+
+Metodologia
+Ferramentas
+Ambiente Plataforma/Ferramenta Link de acesso
+Repositório de código GitHub [COLOQUE O LINK DO REPOSITÓRIO AQUI]
+Hospedagem do site Local (via npm start) http://localhost:3000
+Editor de Código Visual Studio Code https://code.visualstudio.com/
+Backend Node.js, JSON Server https://nodejs.org/, https://github.com/typicode/json-server
+Frontend HTML, CSS, JavaScript -
+Bibliotecas JS Chart.js https://www.chartjs.org/
+Framework CSS Bootstrap https://getbootstrap.com/
+API Externa GNews API https://gnews.io/
+
+Exportar para as Planilhas
+Gerenciamento do Projeto
+O projeto utiliza o GitHub para controle de versão. A estrutura de pastas e a divisão de funcionalidades sugerem uma abordagem de desenvolvimento modular. Embora os templates de planejamento de Sprint e Design Thinking tenham sido fornecidos, não há artefatos preenchidos (como um quadro Kanban ou backlogs de sprint), mas a estrutura do código reflete a implementação das histórias de usuário e requisitos definidos.
+
+Solução Implementada
+Funcionalidades
+A solução implementada é um site completo com as seguintes funcionalidades:
+
+Funcionalidade 1 - Sistema de Login e Cadastro
+Permite que novos usuários se cadastrem e que usuários existentes façam login no sistema. O sistema controla o acesso a páginas restritas, como o chat e os formulários. Após o login, o nome do usuário é exibido e um menu de configurações fica disponível.
+
+Estrutura de dados: Usuários
+Instruções de acesso:
+Na página inicial, clique no ícone de menu no canto superior direito para abrir o modal de login.
+Use as credenciais para entrar ou clique em "Registrar-se" para criar uma nova conta.
+Funcionalidade 2 - Chat de Apoio
+Sala de bate-papo anônima onde os usuários podem interagir. Moderadores possuem privilégios para editar e apagar mensagens, garantindo a ordem e segurança do ambiente.
+
+Estrutura de dados: Mensagens
+Instruções de acesso:
+Efetue o login e acesse a página "Chat" no menu de navegação.
+Funcionalidade 3 - Formulários e Gráficos
+Os usuários podem preencher um formulário detalhado sobre seus hábitos de aposta. Os dados são enviados anonimamente para o servidor e podem ser visualizados de forma agregada na página de gráficos.
+
+Estrutura de dados: Apostas
+Instruções de acesso:
+Acesse as páginas "Formulário de Apostas" (via link na página de Chat) e "Gráficos" (também via link na página de Chat).
+Funcionalidade 4 - Sistema de Voluntariado (Ajudantes)
+Usuários podem se candidatar para serem voluntários. Moderadores podem analisar as informações e aprovar ou recusar os candidatos. Uma vez aprovado, o usuário recebe o status de "Ajudante".
+
+Estrutura de dados: Candidatos Ajudante
+Instruções de acesso:
+Acesse "Formulário" no menu para se candidatar.
+Moderadores podem acessar "Lista" para gerenciar as candidaturas.
+Estruturas de Dados
+As estruturas de dados da aplicação estão definidas no arquivo db.json.
+
+Estrutura de Dados - Usuários
+Registro dos usuários do sistema utilizados para login e para o perfil do sistema.
+
+JSON
+
+{
+"login": "usuario",
+"senha": "usuario123",
+"nome": "Usuário Comum",
+"email": "usuario@exemplo.com",
+"ajudante": false,
+"moderador": false,
+"nomeAnonimo": "101",
+"modoAnonimo": false,
+"modoClaro": false,
+"id": 1
+}
+Estrutura de Dados - Mensagens
+Armazena as mensagens do chat, vinculadas ao ID do usuário que as enviou.
+
+JSON
+
+{
+"nome": "Usuário Comum",
+"texto": "Olá, preciso de ajuda.",
+"id_usuario": 1,
+"id": 1
+}
+Estrutura de Dados - Candidatos Ajudante
+Armazena os dados das aplicações para se tornar um ajudante.
+
+JSON
+
+{
+"experiencia": "Já participei de grupos de apoio.",
+"motivacao": "Quero ajudar pessoas a superarem o vício.",
+"disponibilidade": "Noites e finais de semana",
+"vivencia": "sim",
+"como_ajudar": "Ouvindo e compartilhando informações úteis.",
+"termos": "on",
+"nome": "Maria Candidata",
+"email": "maria.candidata@exemplo.com",
+"id": 1
+}
+Estrutura de Dados - Apostas
+Armazena as respostas do formulário de hábitos de aposta.
+
+JSON
+
+{
+"usuarioId": 1,
+"faixa_etaria_18_24": 1,
+"genero_masculino": 1,
+"tempo_aposta_6_meses_1_ano": 1,
+"freq_semana_2_3_vezes": 1,
+"valor_medio_ate_50": 1,
+"deixou_pagar_nao": 1,
+"tentou_parar_sim": 1,
+"precisa_ajuda_sim": 1,
+"id": 1
+}
+Estrutura de Dados - Avisos
+Armazena os avisos e comunicados publicados pelos moderadores.
+
+JSON
+
+{
+"titulo": "Bem-vindo ao Vida Sem Apostas!",
+"texto": "Nosso site está no ar para apoiar quem busca ajuda contra o vício em apostas.",
+"data": "22/06/2025",
+"id": 1
+}
+Módulos e APIs
+Node.js / JSON Server: Utilizado para criar o backend e a API RESTful que serve os dados do arquivo db.json.
+Bootstrap: Framework CSS utilizado para a estilização e responsividade do site.
+Chart.js: Biblioteca JavaScript para a criação dos gráficos na página de estatísticas.
+GNews API: API externa utilizada para buscar e exibir notícias sobre apostas.
+Referências
+Nenhuma referência bibliográfica foi incluída nos arquivos do projeto.
