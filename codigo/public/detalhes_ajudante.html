@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <title>Detalhes do Candidato</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-  <main style="max-width:600px;margin:40px auto 0 auto;">
-  <h2 style="text-align:center;color:#ff7645;">Detalhes do Candidato</h2>
-  <div id="detalhes"></div>
-  <div id="botoes-acoes">
-    <button id="btn-aceitar">Aceitar</button>
-    <button id="btn-recusar">Recusar</button>
-  </div>
-  <a href="lista_ajudantes.html">Voltar para lista</a>
-</main>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    let candidato = null;
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalhes do Candidato</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main style="max-width: 600px; margin: 40px auto 0 auto">
+      <h2 style="text-align: center; color: #ff7645">Detalhes do Candidato</h2>
+      <div id="detalhes"></div>
+      <div id="botoes-acoes">
+        <button id="btn-aceitar">Aceitar</button>
+        <button id="btn-recusar">Recusar</button>
+      </div>
+      <a href="lista_ajudantes.html">Voltar para lista</a>
+    </main>
 
-    fetch(`/candidatos-ajudante/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        candidato = data;
-        document.getElementById('detalhes').innerHTML = `
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      let candidato = null;
+
+      fetch(`/candidatos-ajudante/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          candidato = data;
+          document.getElementById("detalhes").innerHTML = `
           <strong>Nome:</strong> ${candidato.nome}<br>
           <strong>Email:</strong> ${candidato.email}<br>
           <strong>Experiência:</strong> ${candidato.experiencia}<br>
@@ -33,34 +34,38 @@
           <strong>Vivência:</strong> ${candidato.vivencia}<br>
           <strong>Como ajudar:</strong> ${candidato.como_ajudar}<br>
         `;
-      });
-
-    document.getElementById('btn-aceitar').onclick = async function() {
-      if (!candidato) return;
-      // Atualiza o usuário para ajudante
-      const usuariosResp = await fetch('/usuarios');
-      const usuarios = await usuariosResp.json();
-      const usuario = usuarios.find(u => u.email === candidato.email);
-      if (usuario) {
-        await fetch(`/usuarios/${usuario.id}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ajudante: true })
         });
-      }
-      // Remove o candidato da lista de candidatos
-      await fetch(`/candidatos-ajudante/${candidato.id}`, { method: "DELETE" });
-      alert("Usuário aprovado como ajudante!");
-      window.location.href = "lista_ajudantes.html";
-    };
 
-    document.getElementById('btn-recusar').onclick = async function() {
-      if (!candidato) return;
-      // Apenas remove o candidato da lista
-      await fetch(`/candidatos-ajudante/${candidato.id}`, { method: "DELETE" });
-      alert("Candidatura recusada!");
-      window.location.href = "lista_ajudantes.html";
-    };
-  </script>
-</body>
+      document.getElementById("btn-aceitar").onclick = async function () {
+        if (!candidato) return;
+        // Atualiza o usuário para ajudante
+        const usuariosResp = await fetch("/usuarios");
+        const usuarios = await usuariosResp.json();
+        const usuario = usuarios.find((u) => u.email === candidato.email);
+        if (usuario) {
+          await fetch(`/usuarios/${usuario.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ajudante: true }),
+          });
+        }
+        // Remove o candidato da lista de candidatos
+        await fetch(`/candidatos-ajudante/${candidato.id}`, {
+          method: "DELETE",
+        });
+        alert("Usuário aprovado como ajudante!");
+        window.location.href = "lista_ajudantes.html";
+      };
+
+      document.getElementById("btn-recusar").onclick = async function () {
+        if (!candidato) return;
+        // Apenas remove o candidato da lista
+        await fetch(`/candidatos-ajudante/${candidato.id}`, {
+          method: "DELETE",
+        });
+        alert("Candidatura recusada!");
+        window.location.href = "lista_ajudantes.html";
+      };
+    </script>
+  </body>
 </html>

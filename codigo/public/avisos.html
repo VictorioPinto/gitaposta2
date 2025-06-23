@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avisos</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/login.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="barra-info">
+        <div class="logo-area">
+          <img
+            src="assets/images/logopng.png"
+            alt="Logo Vida Sem Apostas"
+            class="logo-img"
+          />
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="avisos.html">avisos</a></li>
+            <li><a href="formulario_ajudante.html">Formulario</a></li>
+            <li id="menu-lista-ajudantes">
+              <a href="lista_ajudantes.html">Lista</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="dados-usuario">
+          <span id="userInfo"></span>
+          <button id="btn-login-modal" style="display: none">
+            <img
+              src="assets/images/noun-menu-102129.svg"
+              alt="Menu"
+              style="width: 28px; height: 28px; vertical-align: middle"
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main style="max-width: 700px; margin: 40px auto">
+      <h2 style="text-align: center; color: #ff7645">Avisos</h2>
+      <div id="avisos-lista" class="noticias"></div>
+      <div style="text-align: center; margin-top: 2em">
+        <a
+          href="criar_aviso.html"
+          class="btn btn-warning"
+          style="font-weight: bold; padding: 0.7em 2em; border-radius: 50px"
+          >Criar Aviso</a
+        >
+      </div>
+    </main>
+    <footer
+      style="
+        background: linear-gradient(90deg, #ff7645 0%, #ffd6c1 100%);
+        color: #333;
+        border-top: 2px solid #ff7645;
+        padding: 1.5em 0 1em 0;
+        box-shadow: 0 -2px 8px #ffd6c155;
+      "
+    >
+      <nav style="margin-bottom: 0.7em">
+        <a
+          href="index.html"
+          style="
+            margin: 0 1.2em;
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+          "
+          >Home</a
+        >
+        <a
+          href="about.html"
+          style="
+            margin: 0 1.2em;
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+          "
+          >Sobre nós</a
+        >
+        <a
+          href="recursos.html"
+          style="
+            margin: 0 1.2em;
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+          "
+          >Recursos</a
+        >
+        <a
+          href="avisos.html"
+          style="
+            margin: 0 1.2em;
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+          "
+          >Avisos</a
+        >
+      </nav>
+      <small style="font-size: 1em; letter-spacing: 0.5px"
+        >&copy; 2025 Projeto TI1 &mdash; Vício em Apostas</small
+      >
+    </footer>
+    <script src="./assets/js/avisos.js"></script>
+    <script src="./assets/js/login.js"></script>
+  </body>
+</html>

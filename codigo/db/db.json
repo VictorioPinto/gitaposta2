@@ -1,150 +1,186 @@
 {
   "usuarios": [
     {
-      "login": "2",
-      "senha": "2",
-      "nome": "2",
-      "email": "2@2",
+      "login": "usuario",
+      "senha": "usuario123",
+      "nome": "Usuário Comum",
+      "email": "usuario@exemplo.com",
       "ajudante": false,
       "moderador": false,
-      "nomeAnonimo": " 830",
+      "nomeAnonimo": "101",
       "modoAnonimo": false,
       "modoClaro": false,
       "id": 1
     },
     {
-      "login": "a",
-      "senha": "a",
-      "nome": "a2",
-      "email": "a@aaaa",
-      "ajudante": false,
+      "login": "ajudante",
+      "senha": "ajudante123",
+      "nome": "Ajudante Silva",
+      "email": "ajudante@exemplo.com",
+      "ajudante": true,
       "moderador": false,
-      "nomeAnonimo": " 896",
-      "modoAnonimo": true,
+      "nomeAnonimo": "202",
+      "modoAnonimo": false,
       "modoClaro": false,
       "id": 2
+    },
+    {
+      "login": "moderador",
+      "senha": "moderador123",
+      "nome": "Moderador Souza",
+      "email": "moderador@exemplo.com",
+      "ajudante": false,
+      "moderador": true,
+      "nomeAnonimo": "303",
+      "modoAnonimo": false,
+      "modoClaro": false,
+      "id": 3
     }
   ],
   "mensagens": [
     {
-      "nome": "a",
-      "texto": "a",
+      "nome": "Usuário Comum",
+      "texto": "Olá, preciso de ajuda.",
       "id_usuario": 1,
-      "id": 10
+      "id": 1
     },
     {
-      "nome": "a",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 11
-    },
-    {
-      "nome": "a",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 12
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 13
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aa",
-      "id_usuario": 1,
-      "id": 14
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 15
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 16
-    },
-    {
-      "nome": "b",
-      "texto": "aaaaa",
-      "id": 17
-    },
-    {
-      "nome": "b",
-      "texto": "aa",
-      "id": 18
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "a",
-      "id_usuario": 1,
-      "id": 19
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "a",
-      "id_usuario": 1,
-      "id": 20
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaaaa",
-      "id_usuario": 1,
-      "id": 21
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 22
-    },
-    {
-      "nome": "a",
-      "texto": "aaa",
-      "id_usuario": 1,
-      "id": 23
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaaaaa",
-      "id_usuario": 1,
-      "id": 24
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaaa",
-      "id_usuario": 1,
-      "id": 25
-    },
-    {
-      "nome": "usuario 983",
-      "texto": "aaaaaa",
-      "id_usuario": 1,
-      "id": 26
-    },
-    {
-      "nome": "a",
-      "texto": "aaaa",
-      "id_usuario": 1,
-      "id": 27
-    },
-    {
-      "nome": "usuario 896",
-      "texto": "aaaaa",
+      "nome": "Ajudante Silva",
+      "texto": "Olá! Como posso ajudar você hoje?",
       "id_usuario": 2,
-      "id": 28
+      "id": 2
     },
     {
-      "nome": "a2",
-      "texto": "aaaaa",
-      "id_usuario": 2,
-      "id": 29
+      "nome": "Moderador Souza",
+      "texto": "Lembre-se: o chat é um espaço seguro para todos.",
+      "id_usuario": 3,
+      "id": 3
     }
   ],
-  "candidatos-ajudante": [],
-  "apostas": []
+  "candidatos-ajudante": [
+    {
+      "experiencia": "Já participei de grupos de apoio.",
+      "motivacao": "Quero ajudar pessoas a superarem o vício.",
+      "disponibilidade": "Noites e finais de semana",
+      "vivencia": "sim",
+      "como_ajudar": "Ouvindo e compartilhando informações úteis.",
+      "termos": "on",
+      "nome": "Maria Candidata",
+      "email": "maria.candidata@exemplo.com",
+      "id": 1
+    }
+  ],
+  "apostas": [
+    {
+      "usuarioId": 1,
+      "faixa_etaria_menos_18": 0,
+      "faixa_etaria_18_24": 1,
+      "faixa_etaria_25_34": 0,
+      "faixa_etaria_35_44": 0,
+      "faixa_etaria_45_54": 0,
+      "faixa_etaria_55_mais": 0,
+      "genero_masculino": 1,
+      "genero_feminino": 0,
+      "genero_outro": 0,
+      "tempo_aposta_menos_6_meses": 0,
+      "tempo_aposta_6_meses_1_ano": 1,
+      "tempo_aposta_1_2_anos": 0,
+      "tempo_aposta_2_5_anos": 0,
+      "tempo_aposta_mais_5_anos": 0,
+      "freq_semana_1_vez": 0,
+      "freq_semana_2_3_vezes": 1,
+      "freq_semana_4_6_vezes": 0,
+      "freq_semana_todos_os_dias": 0,
+      "valor_medio_ate_50": 1,
+      "valor_medio_51_200": 0,
+      "valor_medio_201_500": 0,
+      "valor_medio_501_1000": 0,
+      "valor_medio_mais_1000": 0,
+      "deixou_pagar_nao": 1,
+      "deixou_pagar_sim": 0,
+      "tentou_parar_nao": 0,
+      "tentou_parar_sim": 1,
+      "precisa_ajuda_nao": 0,
+      "precisa_ajuda_sim": 1,
+      "id": 1
+    },
+    {
+      "usuarioId": 2,
+      "faixa_etaria_menos_18": 0,
+      "faixa_etaria_18_24": 0,
+      "faixa_etaria_25_34": 1,
+      "faixa_etaria_35_44": 0,
+      "faixa_etaria_45_54": 0,
+      "faixa_etaria_55_mais": 0,
+      "genero_masculino": 0,
+      "genero_feminino": 1,
+      "genero_outro": 0,
+      "tempo_aposta_menos_6_meses": 0,
+      "tempo_aposta_6_meses_1_ano": 0,
+      "tempo_aposta_1_2_anos": 1,
+      "tempo_aposta_2_5_anos": 0,
+      "tempo_aposta_mais_5_anos": 0,
+      "freq_semana_1_vez": 1,
+      "freq_semana_2_3_vezes": 0,
+      "freq_semana_4_6_vezes": 0,
+      "freq_semana_todos_os_dias": 0,
+      "valor_medio_ate_50": 0,
+      "valor_medio_51_200": 1,
+      "valor_medio_201_500": 0,
+      "valor_medio_501_1000": 0,
+      "valor_medio_mais_1000": 0,
+      "deixou_pagar_nao": 1,
+      "deixou_pagar_sim": 0,
+      "tentou_parar_nao": 1,
+      "tentou_parar_sim": 0,
+      "precisa_ajuda_nao": 1,
+      "precisa_ajuda_sim": 0,
+      "id": 2
+    },
+    {
+      "usuarioId": 3,
+      "faixa_etaria_menos_18": 0,
+      "faixa_etaria_18_24": 0,
+      "faixa_etaria_25_34": 0,
+      "faixa_etaria_35_44": 1,
+      "faixa_etaria_45_54": 0,
+      "faixa_etaria_55_mais": 0,
+      "genero_masculino": 1,
+      "genero_feminino": 0,
+      "genero_outro": 0,
+      "tempo_aposta_menos_6_meses": 0,
+      "tempo_aposta_6_meses_1_ano": 0,
+      "tempo_aposta_1_2_anos": 0,
+      "tempo_aposta_2_5_anos": 1,
+      "tempo_aposta_mais_5_anos": 0,
+      "freq_semana_1_vez": 0,
+      "freq_semana_2_3_vezes": 0,
+      "freq_semana_4_6_vezes": 1,
+      "freq_semana_todos_os_dias": 0,
+      "valor_medio_ate_50": 0,
+      "valor_medio_51_200": 0,
+      "valor_medio_201_500": 1,
+      "valor_medio_501_1000": 0,
+      "valor_medio_mais_1000": 0,
+      "deixou_pagar_nao": 0,
+      "deixou_pagar_sim": 1,
+      "tentou_parar_nao": 0,
+      "tentou_parar_sim": 1,
+      "id": 3
+    }
+  ],
+  "avisos": [
+    {
+      "titulo": "Bem-vindo ao Vida Sem Apostas!",
+      "texto": "Nosso site está no ar para apoiar quem busca ajuda contra o vício em apostas.",
+      "data": "22/06/2025",
+      "id": 1
+    },
+    {
+      "titulo": "Novo recurso: Gráficos de estatísticas",
+      "texto": "Agora você pode visualizar gráficos com dados anônimos das respostas dos usuários.",
+      "data": "22/06/2025",
+      "id": 2
+    }
+  ]
 }

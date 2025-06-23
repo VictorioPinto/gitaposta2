@@ -1,15 +1,3 @@
-// Trabalho Interdisciplinar 1 - Aplicações Web
-//
-// Esse módulo realiza o registro de novos usuários e login para aplicações com
-// backend baseado em API REST provida pelo JSONServer
-// Os dados de usuário estão localizados no arquivo db.json que acompanha este projeto.
-//
-// Autor: Rommel Vieira Carneiro (rommelcarneiro@gmail.com)
-// Data: 09/09/2024
-//
-// Código LoginApp
-
-// Página inicial de Login
 const LOGIN_URL = "index.html";
 let RETURN_URL = "index.html";
 const API_URL = "/usuarios";
@@ -37,7 +25,11 @@ function initLoginApp() {
   let pagina = window.location.pathname;
   // Permite acesso livre à index.html e à raiz "/"
   if (pagina.endsWith("/index.html") || pagina === "/" || pagina === "/index") {
-    // Não exige login na index
+    // Não exige login na index, mas carrega dados do usuário se existirem
+    usuarioCorrenteJSON = sessionStorage.getItem("usuarioCorrente");
+    if (usuarioCorrenteJSON) {
+      usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
+    }
     return;
   }
   if (pagina != LOGIN_URL) {
@@ -78,7 +70,6 @@ function carregarUsuarios(callback) {
     })
     .catch((error) => {
       console.error("Erro ao ler usuários via API JSONServer:", error);
-      displayMessage("Erro ao ler usuários");
     });
 }
 function nomeAnonimoreturn(usuario) {
@@ -187,73 +178,109 @@ function showUserInfo(element) {
   var elemUser = document.getElementById(element);
   if (elemUser && usuarioCorrente && usuarioCorrente.nome) {
     elemUser.innerHTML = `
-      <span class="user-label">${usuarioCorrente.nome} (${usuarioCorrente.login})</span>
+      <span class="user-label">${usuarioCorrente.nome} </span>
       <button id="userinfo-button" type="button" class="userinfo-btn">${usersvg}</button>
       <div id="user-dropdown" class="user-dropdown">
         <ul>
           <li><button class="user-dropdown-item logout" onclick="logoutUser()">Sair</button></li>
           <li><button class="user-dropdown-item config" onclick="configurantionsUser()">Configurações</button></li>
+          <li><button class="user-dropdown-item btn btn-outline-warning" id="toggle-theme" >🌙/☀️</button></li>
         </ul>
       </div>
     `;
-    document.getElementById("userinfo-button").onclick = function (e) {
-      e.stopPropagation();
-      const menu = document.getElementById("user-dropdown");
-      const btn = document.getElementById("userinfo-button");
-      const isOpen = menu.style.display === "block";
-      menu.style.display = isOpen ? "none" : "block";
-      if (!isOpen) {
-        btn.classList.add("active");
+    btnToggleTheme = document.getElementById("toggle-theme");
+    if (btnToggleTheme) {
+      btnToggleTheme.onclick = async function (e) {
+        e.stopPropagation();
+        document.body.classList.toggle("light-mode");
+        const modoClaroAtivo = document.body.classList.contains("light-mode");
+        localStorage.setItem("theme", modoClaroAtivo ? "light" : "dark");
+        const usuarioCorrente = JSON.parse(
+          sessionStorage.getItem("usuarioCorrente")
+        );
+        if (usuarioCorrente && usuarioCorrente.id) {
+          try {
+            const resp = await fetch(
+              `http://localhost:3000/usuarios/${usuarioCorrente.id}`,
+              {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ modoClaro: modoClaroAtivo }),
+              }
+            );
+            if (resp.ok) {
+              const atualizado = await resp.json();
+              sessionStorage.setItem(
+                "usuarioCorrente",
+                JSON.stringify(atualizado)
+              );
+              window.usuarioCorrente = atualizado;
+            }
+          } catch (err) {
+            alert("Erro ao atualizar modo claro no servidor.");
+          }
+        }
+      };
+      // Aplica o tema salvo no usuário ao carregar
+      const usuarioCorrente = JSON.parse(
+        sessionStorage.getItem("usuarioCorrente")
+      );
+      if (usuarioCorrente && usuarioCorrente.modoClaro) {
+        document.body.classList.add("light-mode");
       } else {
-        btn.classList.remove("active");
+        document.body.classList.remove("light-mode");
       }
-    };
+    }
+    const userInfoButton = document.getElementById("userinfo-button");
+    if (userInfoButton) {
+      userInfoButton.onclick = function (e) {
+        e.stopPropagation();
+        const menu = document.getElementById("user-dropdown");
+        const btn = document.getElementById("userinfo-button");
+        const isOpen = menu.style.display === "block";
+        menu.style.display = isOpen ? "none" : "block";
+        if (!isOpen) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      };
+    }
+
     document.addEventListener("click", function hideMenu(e) {
       const menu = document.getElementById("user-dropdown");
       const btn = document.getElementById("userinfo-button");
       if (menu && menu.style.display === "block") {
         menu.style.display = "none";
-        btn.classList.remove("active");
-        document.removeEventListener("click", hideMenu);
+        if (btn) btn.classList.remove("active");
       }
     });
   }
 }
 
-// Chame APENAS dentro do DOMContentLoaded!
 document.addEventListener("DOMContentLoaded", function () {
   showUserInfo("userInfo");
-});
-//function showUserInfo(element) {
-//  var elemUser = document.getElementById(element);
-//  if (elemUser) {
-//    elemUser.innerHTML = `${usuarioCorrente.nome} (${usuarioCorrente.login})
-//                   <a onclick="logoutUser()">❌</a>`;
-//  }
-//}
+  const menuLista = document.getElementById("menu-lista-ajudantes");
+  if (menuLista) {
+    if (!usuarioCorrente || !usuarioCorrente.moderador) {
+      menuLista.style.display = "none";
+    } else {
+      menuLista.style.display = "";
+    }
+  }
+  // DELETAR CONTA
+  const modalDelete = document.getElementById("modal-delete-conta");
+  const btnCancelarDelete = document.getElementById("cancelar-delete-conta");
+  const btnConfirmarDelete = document.getElementById("confirmar-delete-conta");
 
-// Inicializa as estruturas utilizadas pelo LoginApp
-initLoginApp();
-
-//deletemodal
-window.Modaldelete = function () {
-  const modal = document.getElementById("modal-delete-conta");
-  if (modal) modal.style.display = "flex";
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("modal-delete-conta");
-  const btnCancelar = document.getElementById("cancelar-delete-conta");
-  const btnConfirmar = document.getElementById("confirmar-delete-conta");
-
-  if (btnCancelar) {
-    btnCancelar.onclick = function () {
-      modal.style.display = "none";
+  if (btnCancelarDelete) {
+    btnCancelarDelete.onclick = function () {
+      if (modalDelete) modalDelete.style.display = "none";
     };
   }
 
-  if (btnConfirmar) {
-    btnConfirmar.onclick = async function () {
+  if (btnConfirmarDelete) {
+    btnConfirmarDelete.onclick = async function () {
       try {
         await fetch(
           "http://localhost:3000/usuarios/" + window.usuarioCorrente.id,
@@ -263,73 +290,97 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         sessionStorage.removeItem("usuarioCorrente");
         alert("Conta deletada com sucesso!");
-        window.location.href = "/modulos/login/login.html";
+        window.location.href = "index.html";
       } catch (e) {
         alert("Erro ao deletar conta.");
       }
     };
   }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Só mostra botão de login se NÃO estiver logado
+  // MODAIS DE LOGIN/REGISTRO
   const btnLogin = document.getElementById("btn-login-modal");
   const userInfo = document.getElementById("userInfo");
+
   if (!sessionStorage.getItem("usuarioCorrente")) {
     if (btnLogin) btnLogin.style.display = "inline-block";
     if (userInfo) userInfo.style.display = "none";
   } else {
     if (btnLogin) btnLogin.style.display = "none";
-    if (userInfo) userInfo.style.display = "inline";
+    if (userInfo) userInfo.style.display = "flex"; // Usar flex para alinhar corretamente
   }
 
-  // Abrir modal de login
   if (btnLogin) {
     btnLogin.onclick = function () {
-      document.getElementById("login-modal-bg").style.display = "flex";
+      const loginModal = document.getElementById("login-modal-bg");
+      if (loginModal) loginModal.style.display = "flex";
     };
   }
-  // Fechar modal de login
-  document.getElementById("fechar-modal-login").onclick = function () {
-    document.getElementById("login-modal-bg").style.display = "none";
-  };
 
-  // Abrir modal de registro a partir do modal de login
-  document.getElementById("abrir-modal-registro").onclick = function () {
-    document.getElementById("login-modal-bg").style.display = "none";
-    document.getElementById("register-modal-bg").style.display = "flex";
-  };
-  // Fechar modal de registro
-  document.getElementById("fechar-modal-registro").onclick = function () {
-    document.getElementById("register-modal-bg").style.display = "none";
-  };
+  // ****** INÍCIO DA ÁREA CORRIGIDA ******
+  // Adicionamos verificações para garantir que os elementos existem antes de adicionar eventos
 
-  // Login
-  document.getElementById("login-modal-form").onsubmit = async function (e) {
-    e.preventDefault();
-    const login = document.getElementById("modal-login").value;
-    const senha = document.getElementById("modal-senha").value;
-    // Garante que db_usuarios está carregado antes de tentar logar
-    await new Promise((resolve) => carregarUsuarios(resolve));
-    if (loginUser(login, senha)) {
-      document.getElementById("login-modal-bg").style.display = "none";
-      window.location.reload();
-    } else {
-      alert("Login ou senha inválidos!");
-    }
-  };
+  const btnFecharLogin = document.getElementById("fechar-modal-login");
+  if (btnFecharLogin) {
+    btnFecharLogin.onclick = function () {
+      const loginModal = document.getElementById("login-modal-bg");
+      if (loginModal) loginModal.style.display = "none";
+    };
+  }
 
-  // Registro
-  document.getElementById("register-modal-form").onsubmit = function (e) {
-    e.preventDefault();
-    const nome = document.getElementById("modal-nome").value;
-    const email = document.getElementById("modal-email").value;
-    const login = document.getElementById("modal-login-reg").value;
-    const senha = document.getElementById("modal-senha-reg").value;
-    addUser(nome, login, senha, email);
-    alert("Usuário registrado! Faça login.");
-    document.getElementById("register-modal-form").reset();
-    document.getElementById("register-modal-bg").style.display = "none";
-    document.getElementById("login-modal-bg").style.display = "flex";
-  };
+  const btnAbrirRegistro = document.getElementById("abrir-modal-registro");
+  if (btnAbrirRegistro) {
+    btnAbrirRegistro.onclick = function () {
+      const loginModal = document.getElementById("login-modal-bg");
+      const registerModal = document.getElementById("register-modal-bg");
+      if (loginModal) loginModal.style.display = "none";
+      if (registerModal) registerModal.style.display = "flex";
+    };
+  }
+
+  const btnFecharRegistro = document.getElementById("fechar-modal-registro");
+  if (btnFecharRegistro) {
+    btnFecharRegistro.onclick = function () {
+      const registerModal = document.getElementById("register-modal-bg");
+      if (registerModal) registerModal.style.display = "none";
+    };
+  }
+
+  const formLogin = document.getElementById("login-modal-form");
+  if (formLogin) {
+    formLogin.onsubmit = async function (e) {
+      e.preventDefault();
+      const login = document.getElementById("modal-login").value;
+      const senha = document.getElementById("modal-senha").value;
+      await new Promise((resolve) => carregarUsuarios(resolve));
+      if (loginUser(login, senha)) {
+        const loginModal = document.getElementById("login-modal-bg");
+        if (loginModal) loginModal.style.display = "none";
+        window.location.reload();
+      } else {
+        alert("Login ou senha inválidos!");
+      }
+    };
+  }
+
+  const formRegistro = document.getElementById("register-modal-form");
+  if (formRegistro) {
+    formRegistro.onsubmit = function (e) {
+      e.preventDefault();
+      const nome = document.getElementById("modal-nome").value;
+      const email = document.getElementById("modal-email").value;
+      const login = document.getElementById("modal-login-reg").value;
+      const senha = document.getElementById("modal-senha-reg").value;
+      addUser(nome, login, senha, email);
+      alert("Usuário registrado! Faça login.");
+      formRegistro.reset();
+      const registerModal = document.getElementById("register-modal-bg");
+      const loginModal = document.getElementById("login-modal-bg");
+      if (registerModal) registerModal.style.display = "none";
+      if (loginModal) loginModal.style.display = "flex";
+    };
+  }
+  // ****** FIM DA ÁREA CORRIGIDA ******
 });
+
+// Inicializa a aplicação
+initLoginApp();

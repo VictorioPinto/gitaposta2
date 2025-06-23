@@ -10,17 +10,34 @@
   <body>
     <header>
       <div class="barra-info">
+        <div class="logo-area">
+          <img
+            src="assets/images/logopng.png"
+            alt="Logo Vida Sem Apostas"
+            class="logo-img"
+          />
+        </div>
         <nav class="menu">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">Sobre nós</a></li>
             <li><a href="chat.html">Chat</a></li>
+            <li><a href="avisos.html">avisos</a></li>
             <li><a href="formulario_ajudante.html">Formulario</a></li>
-            <li><a href="lista_ajudantes.html">Lista</a></li>
+            <li id="menu-lista-ajudantes">
+              <a href="lista_ajudantes.html">Lista</a>
+            </li>
           </ul>
         </nav>
         <div class="dados-usuario">
           <span id="userInfo"></span>
+          <button id="btn-login-modal" style="display: none">
+            <img
+              src="assets/images/noun-menu-102129.svg"
+              alt="Menu"
+              style="width: 28px; height: 28px; vertical-align: middle"
+            />
+          </button>
         </div>
       </div>
     </header>
@@ -80,6 +97,15 @@
       </form>
       <div id="mensagem"></div>
     </main>
+    <footer class="footer-site">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre nós</a>
+        <a href="lista_ajudantes.html">se torne ajudante</a>
+        <a href="avisos.html">Avisos</a>
+      </nav>
+      <small>&copy; 2025 Projeto TI1 &mdash; Vício em Apostas</small>
+    </footer>
     <script src="./assets/js/formulario.js"></script>
   </body>
 </html>

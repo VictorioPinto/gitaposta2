@@ -2,10 +2,8 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista de Candidatos a Ajudante</title>
+    <title>Criar Aviso</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/login.js"></script>
   </head>
   <body>
     <header>
@@ -41,20 +39,49 @@
         </div>
       </div>
     </header>
-    <main>
-      <h2>Candidatos a Ajudante</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Motivação</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-candidatos"></tbody>
-      </table>
+    <main style="max-width: 500px; margin: 40px auto">
+      <h2 style="text-align: center; color: #ff7645">Criar Aviso</h2>
+      <form id="form-aviso" class="noticias">
+        <label for="titulo" style="color: #ff7645; font-weight: bold"
+          >Título:</label
+        >
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          required
+          style="margin-bottom: 1em; width: 100%; padding: 0.5em"
+        />
+        <label for="texto" style="color: #ff7645; font-weight: bold"
+          >Texto do aviso:</label
+        >
+        <textarea
+          id="texto"
+          name="texto"
+          rows="5"
+          required
+          style="margin-bottom: 1em; width: 100%; padding: 0.5em"
+        ></textarea>
+        <button
+          type="submit"
+          class="btn btn-warning"
+          style="font-weight: bold; padding: 0.7em 2em; border-radius: 50px"
+        >
+          Publicar Aviso
+        </button>
+      </form>
+      <div
+        id="mensagem-aviso"
+        style="text-align: center; margin-top: 1em"
+      ></div>
+      <div style="text-align: center; margin-top: 2em">
+        <a href="avisos.html" class="btn btn-outline-warning"
+          >Voltar para avisos</a
+        >
+      </div>
     </main>
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/criar_avisos.js"></script>
   </body>
   <footer class="footer-site">
     <nav>
@@ -65,5 +92,4 @@
     </nav>
     <small>&copy; 2025 Projeto TI1 &mdash; Vício em Apostas</small>
   </footer>
-  <script src="./assets/js/lista_ajudantes.js"></script>
 </html>

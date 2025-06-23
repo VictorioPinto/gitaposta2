@@ -1,162 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Descubra quanto você gasta com apostas</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-  <header>
-    <div class="barra-info">
-      <nav class="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Sobre nós</a></li>
-          <li><a href="chat.html">Chat</a></li>
-          <li><a href="formulario_ajudante.html">Formulario</a></li>
-          <li><a href="lista_ajudantes.html">Lista</a></li>
-          <li><a href="formulario_apostas.html">Apostas</a></li>
-        </ul>
-      </nav>
-      <div class="dados-usuario">
-        <span id="userInfo"></span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Descubra quanto você gasta com apostas</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="barra-info">
+        <div class="logo-area">
+          <img
+            src="assets/images/logopng.png"
+            alt="Logo Vida Sem Apostas"
+            class="logo-img"
+          />
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="avisos.html">avisos</a></li>
+            <li><a href="formulario_ajudante.html">Formulario</a></li>
+            <li id="menu-lista-ajudantes">
+              <a href="lista_ajudantes.html">Lista</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="dados-usuario">
+          <span id="userInfo"></span>
+          <button id="btn-login-modal" style="display: none">
+            <img
+              src="assets/images/noun-menu-102129.svg"
+              alt="Menu"
+              style="width: 28px; height: 28px; vertical-align: middle"
+            />
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
-  <main class="form-apostas-main">
-    <h2>Descubra quanto você gasta com apostas</h2>
-    <form id="form-apostas">
-  <h2>Perfil do Usuário</h2>
-  <!-- Faixa etária -->
-  <div class="pergunta">
-    <label>Qual a sua faixa etária?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="faixa_etaria" value="menos_18" required>Menos de 18 anos</label><br>
-      <label><input type="radio" name="faixa_etaria" value="18_24">18 a 24 anos</label><br>
-      <label><input type="radio" name="faixa_etaria" value="25_34">25 a 34 anos</label><br>
-      <label><input type="radio" name="faixa_etaria" value="35_44">35 a 44 anos</label><br>
-      <label><input type="radio" name="faixa_etaria" value="45_54">45 a 54 anos</label><br>
-      <label><input type="radio" name="faixa_etaria" value="55_mais">55 anos ou mais</label>
-    </div>
-  </div>
-  <!-- Gênero -->
-  <div class="pergunta">
-    <label>Qual o seu gênero?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="genero" value="masculino" required>Masculino</label>
-      <label><input type="radio" name="genero" value="feminino">Feminino</label>
-      <label><input type="radio" name="genero" value="prefiro_nao_responder">Prefiro não responder</label>
-      <label><input type="radio" name="genero" value="outro">Outro</label>
-    </div>
-  </div>
-  <!-- Tempo de aposta -->
-  <div class="pergunta">
-    <label>Há quanto tempo você aposta?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="tempo_aposta" value="menos_6_meses" required>Menos de 6 meses</label><br>
-      <label><input type="radio" name="tempo_aposta" value="6m_1ano">6 meses a 1 ano</label><br>
-      <label><input type="radio" name="tempo_aposta" value="1_2_anos">1 a 2 anos</label><br>
-      <label><input type="radio" name="tempo_aposta" value="2_5_anos">2 a 5 anos</label><br>
-      <label><input type="radio" name="tempo_aposta" value="mais_5_anos">Mais de 5 anos</label>
-    </div>
-  </div>
-  <!-- Frequência semanal -->
-  <div class="pergunta">
-    <label>Em média, quantas vezes por semana você realiza apostas?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="freq_semana" value="1_vez" required>1 vez</label><br>
-      <label><input type="radio" name="freq_semana" value="2_3_vezes">2 a 3 vezes</label><br>
-      <label><input type="radio" name="freq_semana" value="4_6_vezes">4 a 6 vezes</label><br>
-      <label><input type="radio" name="freq_semana" value="todos_dias">Todos os dias</label>
-    </div>
-  </div>
-  <!-- Valor médio semanal -->
-  <div class="pergunta">
-    <label>Qual é o valor médio que você aposta por semana?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="valor_medio" value="ate_50" required>Até R$ 50</label><br>
-      <label><input type="radio" name="valor_medio" value="51_200">De R$ 51 a R$ 200</label><br>
-      <label><input type="radio" name="valor_medio" value="201_500">De R$ 201 a R$ 500</label><br>
-      <label><input type="radio" name="valor_medio" value="501_1000">De R$ 501 a R$ 1000</label><br>
-      <label><input type="radio" name="valor_medio" value="mais_1000">Mais de R$ 1000</label>
-    </div>
-  </div>
+    </header>
+    <main class="form-apostas-main">
+      <h2>Descubra quanto você gasta com apostas</h2>
+      <form id="form-apostas">
+        <div class="pergunta">
+          <label>Faixa etária:</label><br />
+          <label
+            ><input type="radio" name="faixa_etaria" value="1" required /> Menos
+            de 18</label
+          ><br />
+          <label
+            ><input type="radio" name="faixa_etaria" value="2" /> 18-24</label
+          ><br />
+          <label
+            ><input type="radio" name="faixa_etaria" value="3" /> 25-34</label
+          ><br />
+          <label
+            ><input type="radio" name="faixa_etaria" value="4" /> 35-44</label
+          ><br />
+          <label
+            ><input type="radio" name="faixa_etaria" value="5" /> 45-54</label
+          ><br />
+          <label
+            ><input type="radio" name="faixa_etaria" value="6" /> 55+</label
+          >
+        </div>
 
-  <h2>Impacto Pessoal</h2>
-  <!-- Deixar de pagar contas -->
-  <div class="pergunta">
-    <label>Você já deixou de pagar contas ou compromissos para apostar?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="deixou_pagar" value="nunca" required>Nunca</label>
-      <label><input type="radio" name="deixou_pagar" value="raramente">Raramente</label>
-      <label><input type="radio" name="deixou_pagar" value="as_vezes">Às vezes</label>
-      <label><input type="radio" name="deixou_pagar" value="frequentemente">Frequentemente</label>
-      <label><input type="radio" name="deixou_pagar" value="sempre">Sempre</label>
-    </div>
-  </div>
-  <!-- Impacto na vida -->
-  <div class="pergunta">
-    <label>Seu vício em apostas já afetou:</label>
-    <div class="opcoes">
-      <label><input type="checkbox" name="impacto[]" value="saude_mental">Minha saúde mental</label><br>
-      <label><input type="checkbox" name="impacto[]" value="saude_fisica">Minha saúde física</label><br>
-      <label><input type="checkbox" name="impacto[]" value="relacionamentos">Meus relacionamentos familiares</label><br>
-      <label><input type="checkbox" name="impacto[]" value="vida_profissional">Minha vida profissional</label><br>
-      <label><input type="checkbox" name="impacto[]" value="nenhuma">Nenhuma dessas opções</label>
-    </div>
-  </div>
-  <!-- Tentativas de parar -->
-  <div class="pergunta">
-    <label>Você já tentou parar de apostar?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="tentou_parar" value="nunca" required>Nunca tentei</label>
-      <label><input type="radio" name="tentou_parar" value="uma_vez">Já tentei uma vez</label>
-      <label><input type="radio" name="tentou_parar" value="algumas_vezes">Já tentei algumas vezes</label>
-      <label><input type="radio" name="tentou_parar" value="varias_vezes">Tentei várias vezes, mas não consegui</label>
-      <label><input type="radio" name="tentou_parar" value="parei_retornou">Consegui parar por um tempo, mas retornei</label>
-    </div>
-  </div>
+        <div class="pergunta">
+          <label>Gênero:</label><br />
+          <label
+            ><input type="radio" name="genero" value="1" required />
+            Masculino</label
+          ><br />
+          <label><input type="radio" name="genero" value="2" /> Feminino</label
+          ><br />
+          <label><input type="radio" name="genero" value="3" /> Outro</label>
+        </div>
 
-  <h2>Percepção e Consciência</h2>
-  <!-- Sentimento após apostar -->
-  <div class="pergunta">
-    <label>Como você se sente após apostar?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="sentimento" value="feliz" required>Feliz e satisfeito</label>
-      <label><input type="radio" name="sentimento" value="indiferente">Indiferente</label>
-      <label><input type="radio" name="sentimento" value="culpado">Culpado ou arrependido</label>
-      <label><input type="radio" name="sentimento" value="ansioso">Ansioso para apostar novamente</label>
-    </div>
-  </div>
-  <!-- Precisa de ajuda -->
-  <div class="pergunta">
-    <label>Você acredita que precisa de ajuda para lidar com seu hábito de apostar?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="precisa_ajuda" value="sim" required>Sim</label>
-      <label><input type="radio" name="precisa_ajuda" value="nao">Não</label>
-      <label><input type="radio" name="precisa_ajuda" value="nao_certeza">Não tenho certeza</label>
-    </div>
-  </div>
+        <div class="pergunta">
+          <label>Tempo apostando:</label><br />
+          <label
+            ><input type="radio" name="tempo_aposta" value="1" required /> Menos
+            de 6 meses</label
+          ><br />
+          <label
+            ><input type="radio" name="tempo_aposta" value="2" /> 6 meses a 1
+            ano</label
+          ><br />
+          <label
+            ><input type="radio" name="tempo_aposta" value="3" /> 1-2
+            anos</label
+          ><br />
+          <label
+            ><input type="radio" name="tempo_aposta" value="4" /> 2-5
+            anos</label
+          ><br />
+          <label
+            ><input type="radio" name="tempo_aposta" value="5" /> Mais de 5
+            anos</label
+          >
+        </div>
 
-  <h2>Possível Evolução</h2>
-  <!-- Motivação para parar -->
-  <div class="pergunta">
-    <label>Qual é sua maior motivação para querer parar ou reduzir as apostas?</label>
-    <div class="opcoes">
-      <label><input type="radio" name="motivacao_parar" value="estabilidade_financeira" required>Recuperar minha estabilidade financeira</label><br>
-      <label><input type="radio" name="motivacao_parar" value="saude_mental">Proteger minha saúde mental</label><br>
-      <label><input type="radio" name="motivacao_parar" value="relacionamentos">Melhorar meus relacionamentos</label><br>
-      <label><input type="radio" name="motivacao_parar" value="nao_vejo_problema">Não vejo problema no meu hábito</label><br>
-      <label>
-        <input type="radio" name="motivacao_parar" value="outro">Outro (especifique)
-        <input type="text" name="motivacao_outro" placeholder="Descreva aqui" style="margin-left:8px;">
-      </label>
-    </div>
-  </div>
-  <button type="submit">Enviar</button>
-</form>
-  </main>
-  <script src="./assets/js/login.js"></script>
+        <div class="pergunta">
+          <label>Frequência semanal:</label><br />
+          <label
+            ><input type="radio" name="freq_semana" value="1" required /> 1
+            vez</label
+          ><br />
+          <label
+            ><input type="radio" name="freq_semana" value="2" /> 2-3
+            vezes</label
+          ><br />
+          <label
+            ><input type="radio" name="freq_semana" value="3" /> 4-6
+            vezes</label
+          ><br />
+          <label
+            ><input type="radio" name="freq_semana" value="4" /> Todos os
+            dias</label
+          >
+        </div>
+
+        <div class="pergunta">
+          <label>Valor médio gasto:</label><br />
+          <label
+            ><input type="radio" name="valor_medio" value="1" required /> Até
+            R$50</label
+          ><br />
+          <label
+            ><input type="radio" name="valor_medio" value="2" /> R$51-200</label
+          ><br />
+          <label
+            ><input type="radio" name="valor_medio" value="3" />
+            R$201-500</label
+          ><br />
+          <label
+            ><input type="radio" name="valor_medio" value="4" />
+            R$501-1000</label
+          ><br />
+          <label
+            ><input type="radio" name="valor_medio" value="5" /> Mais de
+            R$1000</label
+          >
+        </div>
+
+        <div class="pergunta">
+          <label>Já deixou de pagar contas para apostar?</label><br />
+          <label
+            ><input type="radio" name="deixou_pagar" value="1" required />
+            Não</label
+          ><br />
+          <label
+            ><input type="radio" name="deixou_pagar" value="2" /> Sim</label
+          >
+        </div>
+
+        <div class="pergunta">
+          <label>Já tentou parar?</label><br />
+          <label
+            ><input type="radio" name="tentou_parar" value="1" required />
+            Não</label
+          ><br />
+          <label
+            ><input type="radio" name="tentou_parar" value="2" /> Sim</label
+          >
+        </div>
+
+        <div class="pergunta">
+          <label>Precisa de ajuda?</label><br />
+          <label
+            ><input type="radio" name="precisa_ajuda" value="1" required />
+            Não</label
+          ><br />
+          <label
+            ><input type="radio" name="precisa_ajuda" value="2" /> Sim</label
+          >
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <script src="./assets/js/login.js"></script>
     <script src="./assets/js/formulario_apostas.js"></script>
-</body>
+  </body>
 </html>

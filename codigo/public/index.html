@@ -13,58 +13,38 @@
   <body>
     <header>
       <div class="barra-info">
+        <div class="logo-area">
+          <img
+            src="assets/images/logopng.png"
+            alt="Logo Vida Sem Apostas"
+            class="logo-img"
+          />
+        </div>
         <nav class="menu">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">Sobre nós</a></li>
             <li><a href="chat.html">Chat</a></li>
+            <li><a href="avisos.html">avisos</a></li>
             <li><a href="formulario_ajudante.html">Formulario</a></li>
-            <li><a href="lista_ajudantes.html">Lista</a></li>
+            <li id="menu-lista-ajudantes">
+              <a href="lista_ajudantes.html">Lista</a>
+            </li>
           </ul>
         </nav>
         <div class="dados-usuario">
           <span id="userInfo"></span>
           <button id="btn-login-modal" style="display: none">
-            Entrar / Registrar
+            <img
+              src="assets/images/noun-menu-102129.svg"
+              alt="Menu"
+              style="width: 28px; height: 28px; vertical-align: middle"
+            />
           </button>
         </div>
       </div>
     </header>
-    <main>
-      <section class="boas-vindas">
-        <h1>Bem-vindo ao Vida Sem Apostas</h1>
-        <p>
-          Este site foi criado para apoiar pessoas que desejam superar o vício
-          em apostas, oferecendo informação, acolhimento e ferramentas de apoio.
-        </p>
-        <a href="chat.html" class="btn-destaque btn btn-warning"
-          >Acesse o Chat de Apoio</a
-        >
-      </section>
-
-      <section class="recursos-rapidos">
-        <h2>O que você encontra aqui?</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Chat de Apoio</h3>
-            <p>Converse anonimamente com voluntários e outros usuários.</p>
-            <a href="chat.html">Ir para o Chat</a>
-          </div>
-          <div class="card">
-            <h3>Seja um Ajudante</h3>
-            <p>Cadastre-se para ajudar outras pessoas.</p>
-            <a href="formulario_ajudante.html">Quero ser ajudante</a>
-          </div>
-          <div class="card">
-            <h3>Recursos e Informações</h3>
-            <p>
-              Encontre contatos de apoio e informações sobre o vício em apostas.
-            </p>
-            <a href="recursos.html">Ver recursos</a>
-          </div>
-        </div>
-      </section>
-
+    <main id="bodyindex">
       <!-- Carrossel de Notícias Bootstrap -->
       <section class="carrossel-area">
         <div
@@ -244,16 +224,27 @@
           </button>
         </div>
       </section>
-
-      <section class="depoimentos">
-        <h2>Histórias de Superação</h2>
-        <blockquote>
-          "O site me ajudou a perceber que eu não estava sozinho. O apoio foi
-          fundamental para minha recuperação."
-        </blockquote>
-        <blockquote>
-          "Ser ajudante aqui é gratificante. Cada conversa faz diferença!"
-        </blockquote>
+      <section class="recursos-rapidos">
+        <h2>O que você encontra aqui?</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Chat de Apoio</h3>
+            <p>Converse anonimamente com voluntários e outros usuários.</p>
+            <a href="chat.html">Ir para o Chat</a>
+          </div>
+          <div class="card">
+            <h3>Seja um Ajudante</h3>
+            <p>Cadastre-se para ajudar outras pessoas.</p>
+            <a href="formulario_ajudante.html">Quero ser ajudante</a>
+          </div>
+          <div class="card">
+            <h3>Recursos e Informações</h3>
+            <p>
+              Encontre contatos de apoio e informações sobre o vício em apostas.
+            </p>
+            <a href="recursos.html">Ver recursos</a>
+          </div>
+        </div>
       </section>
     </main>
     <!-- Modal de Login -->
@@ -300,6 +291,15 @@
         </button>
       </div>
     </div>
+    <footer class="footer-site">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre nós</a>
+        <a href="lista_ajudantes.html">se torne ajudante</a>
+        <a href="avisos.html">Avisos</a>
+      </nav>
+      <small>&copy; 2025 Projeto TI1 &mdash; Vício em Apostas</small>
+    </footer>
     <script src="./assets/js/login.js"></script>
     <script src="./assets/js/noticias.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

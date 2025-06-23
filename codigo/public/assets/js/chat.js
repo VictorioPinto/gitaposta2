@@ -1,8 +1,32 @@
+// Constante para a API do Chat
 const CHAT_API_URL = "http://localhost:3000/mensagens";
+
+// =================================================================================
+// INICIALIZAÇÃO E VERIFICAÇÃO DE USUÁRIO
+// =================================================================================
+
+// Pega os dados do usuário do sessionStorage de forma segura.
+// Se não houver usuário logado, redireciona para a página inicial.
+const usuarioCorrenteJSON = sessionStorage.getItem("usuarioCorrente");
+if (!usuarioCorrenteJSON) {
+  alert("Você precisa estar logado para acessar o chat.");
+  // Redireciona para a página que tem o modal de login
+  window.location.href = "index.html";
+}
+
+// ** ALTERAÇÃO SOLICITADA **
+// A nova constante 'usuarioCorrentea' é usada em todo o script.
+const usuarioCorrentea = JSON.parse(usuarioCorrenteJSON);
+
+// =================================================================================
+// ELEMENTOS DO DOM E SVGs
+// =================================================================================
 
 const form = document.getElementById("message-form");
 const input = document.getElementById("message-input");
 const messages = document.getElementById("messages");
+
+// Definições de ícones SVG
 const threeDotsSVG = `
 <svg fill="#000000" width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <g>
@@ -28,37 +52,32 @@ const deleteSVG = `
 </svg>
 `;
 
-window.addEventListener("DOMContentLoaded", async () => {
-  try {
-    const res = await fetch(CHAT_API_URL);
-    const msgs = await res.json();
-    messages.innerHTML = "";
-    msgs.forEach((msg) => {
-      addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
-    });
-  } catch (err) {
-    console.error("Erro ao carregar mensagens:", err);
-  }
-});
+// =================================================================================
+// FUNÇÕES PRINCIPAIS DO CHAT
+// =================================================================================
 
+// Função para renderizar uma única mensagem na tela
 function addMessage(nome, texto, id_usuario, id) {
   const messageDiv = document.createElement("div");
   messageDiv.className = "message";
   messageDiv.dataset.id = id;
-  if (id_usuario === usuarioCorrente.id) {
+
+  // Verifica se a mensagem é do próprio usuário logado
+  if (id_usuario === usuarioCorrentea.id) {
     messageDiv.classList.add("self");
   }
 
   const label = document.createElement("label");
   label.className = "username";
-  label.textContent = nome; // <-- Corrigido aqui
+  label.textContent = nome;
 
   const p = document.createElement("p");
   p.className = "text";
   p.textContent = texto;
   messageDiv.appendChild(label);
 
-  if (usuarioCorrente.moderador) {
+  // Se o usuário for moderador, adiciona o menu de opções (editar/excluir)
+  if (usuarioCorrentea.moderador) {
     const configbutton = document.createElement("span");
     configbutton.className = "config-button";
     configbutton.innerHTML = threeDotsSVG;
@@ -71,16 +90,15 @@ function addMessage(nome, texto, id_usuario, id) {
       }
       options = document.createElement("div");
       options.className = "options";
+      // Escapa aspas simples no texto para não quebrar o HTML
+      const escapedText = texto.replace(/'/g, "\\'");
       options.innerHTML = `
         <ul style="list-style:none; margin:0; padding:0;">
           <li>
             <button onclick="deleteMessage(${id})" title="Excluir">${deleteSVG} Excluir</button>
           </li>
           <li>
-            <button onclick="editMessage(${id}, '${texto.replace(
-        /'/g,
-        "\\'"
-      )}')" title="Editar">${editSVG} Editar</button>
+            <button onclick="editMessage(${id}, '${escapedText}')" title="Editar">${editSVG} Editar</button>
           </li>
         </ul>
       `;
@@ -88,54 +106,75 @@ function addMessage(nome, texto, id_usuario, id) {
     };
     messageDiv.appendChild(configbutton);
   }
+
   messageDiv.appendChild(p);
   messages.appendChild(messageDiv);
   messages.scrollTop = messages.scrollHeight;
 }
 
-form.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  const text = input.value.trim();
-  if (text === "") return;
-
-  // Usa o nome anônimo se o modoAnonimo estiver ativado
-  const nomeParaEnviar = usuarioCorrente.modoAnonimo
-    ? nomeAnonimoreturn(usuarioCorrente)
-    : usuarioCorrente.nome;
-
+// Função para recarregar todas as mensagens da API
+async function reloadAllMessages() {
   try {
-    await fetch(CHAT_API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        nome: nomeParaEnviar,
-        texto: text,
-        id_usuario: usuarioCorrente.id,
-      }),
-    });
     const res = await fetch(CHAT_API_URL);
     const msgs = await res.json();
     messages.innerHTML = "";
     msgs.forEach((msg) => {
       addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
     });
-    input.value = "";
   } catch (err) {
-    alert("Erro ao enviar mensagem!");
+    console.error("Erro ao recarregar mensagens:", err);
   }
-});
+}
+
+// =================================================================================
+// EVENT LISTENERS
+// =================================================================================
+
+// Carrega as mensagens iniciais quando a página é carregada
+window.addEventListener("DOMContentLoaded", reloadAllMessages);
+
+// Listener para o envio do formulário
+if (form) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (text === "") return;
+
+    // Usa o nome anônimo se o modoAnonimo estiver ativado
+    const nomeParaEnviar = usuarioCorrentea.modoAnonimo
+      ? nomeAnonimoreturn(usuarioCorrentea) // Supondo que nomeAnonimoreturn() esteja disponível globalmente (de login.js)
+      : usuarioCorrentea.nome;
+
+    try {
+      await fetch(CHAT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: nomeParaEnviar,
+          texto: text,
+          id_usuario: usuarioCorrentea.id,
+        }),
+      });
+
+      // Após enviar, recarrega as mensagens para exibir a nova
+      await reloadAllMessages();
+      input.value = "";
+    } catch (err) {
+      alert("Erro ao enviar mensagem!");
+    }
+  });
+}
+
+// =================================================================================
+// FUNÇÕES GLOBAIS PARA EDIÇÃO E EXCLUSÃO (chamadas a partir do HTML)
+// =================================================================================
 
 window.deleteMessage = async function (id) {
   if (!confirm("Tem certeza que deseja excluir esta mensagem?")) return;
   try {
     await fetch(`${CHAT_API_URL}/${id}`, { method: "DELETE" });
-    // Após deletar, recarrega as mensagens do backend
-    const res = await fetch(CHAT_API_URL);
-    const msgs = await res.json();
-    messages.innerHTML = "";
-    msgs.forEach((msg) => {
-      addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
-    });
+    // Após deletar, recarrega as mensagens
+    await reloadAllMessages();
   } catch (err) {
     alert("Erro ao excluir mensagem!");
   }
@@ -150,13 +189,8 @@ window.editMessage = async function (id, oldText) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ texto: newText }),
     });
-    // Atualiza a mensagem editada na tela
-    const res = await fetch(CHAT_API_URL);
-    const msgs = await res.json();
-    messages.innerHTML = "";
-    msgs.forEach((msg) => {
-      addMessage(msg.nome, msg.texto, msg.id_usuario, msg.id);
-    });
+    // Após editar, recarrega as mensagens
+    await reloadAllMessages();
   } catch (err) {
     alert("Erro ao editar mensagem!");
   }

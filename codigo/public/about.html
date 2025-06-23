@@ -10,6 +10,13 @@
   <body>
     <header>
       <div class="barra-info">
+        <div class="logo-area">
+          <img
+            src="assets/images/logopng.png"
+            alt="Logo Vida Sem Apostas"
+            class="logo-img"
+          />
+        </div>
         <nav class="menu">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -21,70 +28,114 @@
         </nav>
         <div class="dados-usuario">
           <span id="userInfo"></span>
+          <button id="btn-login-modal" style="display: none">
+            <img
+              src="assets/images/noun-menu-102129.svg"
+              alt="Menu"
+              style="width: 28px; height: 28px; vertical-align: middle"
+            />
+          </button>
         </div>
       </div>
     </header>
     <main>
       <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre o Vida Sem Apostas</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="./assets/js/login.js"></script>
-</head>
-<body>
-  <header>
-    <div class="banner"><img src="./assets/images/banner_ti.png" alt="Banner"></div>
-    <div class="barra-info">
-      <nav class="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Sobre nós</a></li>
-          <li><a href="recursos.html">Recursos</a></li>
-        </ul>
-      </nav>
-      <div class="dados-usuario">
-        <span id="userInfo"></span>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="sobre-site">
-      <h1>Sobre o Vida Sem Apostas</h1>
-      <p>
-        O Vida Sem Apostas é uma plataforma dedicada a apoiar pessoas que enfrentam dificuldades com o vício em apostas. Nosso objetivo é oferecer um espaço seguro, informativo e acolhedor para quem busca ajuda, orientação ou deseja ajudar outros nessa jornada.
-      </p>
-      <p>
-        Aqui você encontra:
-        <ul>
-          <li>Chat de apoio anônimo</li>
-          <li>Cadastro de voluntários ajudantes</li>
-          <li>Recursos e contatos de instituições especializadas</li>
-          <li>Informações atualizadas sobre o cenário das apostas no Brasil</li>
-        </ul>
-      </p>
-      <p>
-        Acreditamos que a recuperação é possível e que ninguém precisa passar por isso sozinho. Nosso site é gratuito, seguro e feito para você!
-      </p>
-    </section>
-    <section class="criadores">
-      <h2>Criadores</h2>
-      <div class="criador">
-        <img src="assets/images/avatar1.png" alt="Foto do Criador 1" class="avatar">
-        <h3>Nome do Criador 1</h3>
-        <p>Breve descrição ou função no projeto.</p>
-      </div>
-      <div class="criador">
-        <img src="assets/images/avatar2.png" alt="Foto do Criador 2" class="avatar">
-        <h3>Nome do Criador 2</h3>
-        <p>Breve descrição ou função no projeto.</p>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+      <html lang="pt-BR">
+        <head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Sobre o Vida Sem Apostas</title>
+          <link rel="stylesheet" href="./assets/css/style.css" />
+          <script src="./assets/js/login.js"></script>
+        </head>
+        <body>
+          <main>
+            <section class="criadores">
+              <h2>Quem Somos</h2>
+              <div
+                class="criador"
+                style="
+                  display: flex;
+                  gap: 2em;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                "
+              >
+                <div
+                  style="flex: 1 1 220px; max-width: 260px; text-align: center"
+                >
+                  <img
+                    src="assets/images/avatar1.png"
+                    alt="Foto do Criador 1"
+                    class="avatar"
+                    style="width: 120px; border-radius: 50%; margin-bottom: 1em"
+                  />
+                  <h3>Victório Neto</h3>
+                  <p>
+                    Estudante de Sistemas de Informação na PUC Minas, apaixonado
+                    por desenvolvimento web e soluções que impactam
+                    positivamente a sociedade. Responsável pelo backend,
+                    integração com banco de dados e funcionalidades de
+                    autenticação do Vida Sem Apostas.
+                  </p>
+                  <p>
+                    <a href="mailto:seuemail@exemplo.com" style="color: #ff7645"
+                      >Contato</a
+                    >
+                  </p>
+                </div>
+                <div
+                  style="flex: 1 1 220px; max-width: 260px; text-align: center"
+                >
+                  <img
+                    src="assets/images/avatar2.jpg"
+                    alt="Foto do Criador 2"
+                    class="avatar"
+                    style="
+                      width: 300px;
+                      height: 320px;
+                      border-radius: 50%;
+                      margin-bottom: 1em;
+                    "
+                  />
+                  <h3>Lucas Avelar</h3>
+                  <p>
+                    Estudante de Sistemas de Informação na PUC Minas, entusiasta
+                    de tecnologia e acessibilidade digital. Responsável pelo
+                    frontend, design responsivo e experiência do usuário,
+                    garantindo que o site seja intuitivo e acolhedor para todos.
+                  </p>
+                  <p>
+                    <a
+                      href="mailto:seuemail2@exemplo.com"
+                      style="color: #ff7645"
+                      >Contato</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <p style="text-align: center; margin-top: 2em">
+                Desenvolvido como parte do Projeto Interdisciplinar de
+                Aplicações Web - PUC Minas.<br />
+                Nosso compromisso é com a informação, o acolhimento e a
+                transformação de vidas.
+              </p>
+            </section>
+          </main>
+        </body>
+        <footer class="footer-site">
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Sobre nós</a>
+            <a href="lista_ajudantes.html">se torne ajudante</a>
+            <a href="avisos.html">Avisos</a>
+          </nav>
+          <small>&copy; 2025 Projeto TI1 &mdash; Vício em Apostas</small>
+        </footer>
+      </html>
     </main>
   </body>
 </html>
